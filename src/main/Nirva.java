@@ -43,7 +43,7 @@ public class Nirva extends JavaPlugin {
     public void onEnable() {
 	System.out.println("[NirvaEx] Plugin connected");
 	PluginManager pm = getServer().getPluginManager();
-	
+
 	wgPlugin = getWorldGuard();
 	consoleCmds = new ConsoleCommands(this);
 	pm.registerEvents(consoleCmds, this);
@@ -87,7 +87,8 @@ public class Nirva extends JavaPlugin {
 		Classes.set("Eight", "Butcher");
 		Classes.set("Nine", "Assassin");
 		Classes.set("Deleted", "Deleted");
-		Classes.set("List", modif.getString("Class.One") + " | " + modif.getString("Class.Two") + " | " + modif.getString("Class.Three") + " | " + modif.getString("Class.Four") + " | "
+		Classes.set("List",
+			modif.getString("Class.One") + " | " + modif.getString("Class.Two") + " | " + modif.getString("Class.Three") + " | " + modif.getString("Class.Four") + " | "
 				+ modif.getString("Class.Five") + " | " + modif.getString("Class.Six") + " | " + modif.getString("Class.Seven") + " | " + modif.getString("Class.Eight") + " | "
 				+ modif.getString("Class.Nine") + " | " + modif.getString("Class.Deleted"));
 		ConfigurationSection Francais = modif.createSection("French");
@@ -238,13 +239,13 @@ public class Nirva extends JavaPlugin {
 	    return true;
 	}
     }
-    
-    public WorldGuardPlugin getWorldGuard(){
-        Plugin plugin = getServer().getPluginManager().getPlugin("WorldGuard");
-        if ((plugin == null) || (!(plugin instanceof WorldGuardPlugin))){
-            return null;
-        }
-        return (WorldGuardPlugin)plugin;
+
+    public WorldGuardPlugin getWorldGuard() {
+	Plugin plugin = getServer().getPluginManager().getPlugin("WorldGuard");
+	if ((plugin == null) || (!(plugin instanceof WorldGuardPlugin))) {
+	    return null;
+	}
+	return (WorldGuardPlugin) plugin;
     }
 
 }

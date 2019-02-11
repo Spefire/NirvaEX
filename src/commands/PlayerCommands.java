@@ -365,24 +365,24 @@ public class PlayerCommands implements Listener {
     }
 
     @SuppressWarnings("deprecation") public boolean NirvaExActived(Player p) {
-	if (plugin.getWorldGuard() == null){
+	if (plugin.getWorldGuard() == null) {
 	    File f = new File("plugins/NirvaEx/worlds.yml");
 	    FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
-	    String path = p.getWorld().toString()+ ".NirvaEx actived";;
+	    String path = p.getWorld().toString() + ".NirvaEx actived";
 	    boolean mondeset = modif.getBoolean(path);
-	    if (mondeset==false){
+	    if (mondeset == false) {
 		return false;
-	    }else{
+	    } else {
 		return true;
 	    }
 	} else {
 	    File f = new File("plugins/NirvaEx/worlds.yml");
 	    FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
-	    String path = p.getWorld().toString()+ ".NirvaEx actived";;
+	    String path = p.getWorld().toString() + ".NirvaEx actived";
 	    boolean mondeset = modif.getBoolean(path);
-	    if (mondeset==false || !plugin.getWorldGuard().getGlobalRegionManager().allows(DefaultFlag.PVP, p.getLocation())){
+	    if (mondeset == false || !plugin.getWorldGuard().getGlobalRegionManager().allows(DefaultFlag.PVP, p.getLocation())) {
 		return false;
-	    }else{
+	    } else {
 		return true;
 	    }
 	}

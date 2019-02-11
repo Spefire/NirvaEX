@@ -16,8 +16,8 @@ class Cooldown extends Thread {
     private Player p;
 
     public Cooldown(Player p, Nirva plugin) {
-    	this.plugin = plugin;
-    	this.p = p;
+	this.plugin = plugin;
+	this.p = p;
     }
 
     public void run() {
@@ -33,7 +33,7 @@ class Cooldown extends Thread {
 	    long waitingTime = modifi.getLong("Types.Cooldown");
 	    if ((waitingTime - p.getLevel()) <= 5) {
 		waitingTime = 5000;
-	    }else{
+	    } else {
 		waitingTime = (waitingTime - p.getLevel()) * 1000;
 	    }
 	    p.sendMessage((waitingTime / 1000) + "...");
