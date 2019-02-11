@@ -22,7 +22,7 @@ import org.bukkit.util.Vector;
 public class DefenceSkills implements Listener {
 
     private Nirva plugin;
-    private int secondes = 20;
+    private int seconds = 20;
 
     public DefenceSkills(Nirva plugin) {
 	this.plugin = plugin;
@@ -41,18 +41,18 @@ public class DefenceSkills implements Listener {
 	    String langages = "languages." + p.getName();
 	    String langage = config.getString(langages);
 	    String tirer = "loading." + p.getName();
-	    boolean peutTirer = config.getBoolean(tirer);
+	    boolean canFire = config.getBoolean(tirer);
 	    String arg = "ability." + p.getName();
-	    int sort = config.getInt(arg);
+	    int skill = config.getInt(arg);
 	    if ((event.getAction() == Action.LEFT_CLICK_AIR) || (event.getAction() == Action.LEFT_CLICK_BLOCK)) {
 		if (modifi.getString("Class.Seven").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Seven"))) {
-		    if (sort == 4 && peutTirer == true) {
+		    if (skill == 4 && canFire == true) {
 			// ///
 			Vector dessus = p.getEyeLocation().getDirection().multiply(3);
 			dessus.setY(2);
 			p.setVelocity(dessus);
 			p.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
-			p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 5 * secondes, 4));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 5 * seconds, 4));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Two"));
 			config.set(tirer, false);
@@ -61,10 +61,10 @@ public class DefenceSkills implements Listener {
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.One").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.One"))) {
-		    if (sort == 2 && peutTirer == true) {
+		    if (skill == 2 && canFire == true) {
 			// ///
-			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 15 * secondes, 1));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 15 * secondes, 1));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 15 * seconds, 1));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 15 * seconds, 1));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Three"));
 			config.set(tirer, false);
@@ -72,10 +72,10 @@ public class DefenceSkills implements Listener {
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		    if (sort == 3 && peutTirer == true) {
+		    if (skill == 3 && canFire == true) {
 			// ///
-			p.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 15 * secondes, 0));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 15 * secondes, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 15 * seconds, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 15 * seconds, 0));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Four"));
 			config.set(tirer, false);
@@ -84,7 +84,7 @@ public class DefenceSkills implements Listener {
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Four").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Four"))) {
-		    if (sort == 4 && peutTirer == true) {
+		    if (skill == 4 && canFire == true) {
 			// ///
 			Vector v = p.getEyeLocation().getDirection().setY(0).multiply(9);
 			p.setVelocity(v);
@@ -96,10 +96,10 @@ public class DefenceSkills implements Listener {
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Five").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Five"))) {
-		    if (sort == 1 && peutTirer == true) {
+		    if (skill == 1 && canFire == true) {
 			// ///
-			p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 10 * secondes, 0));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 10 * secondes, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 10 * seconds, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 10 * seconds, 0));
 			p.getWorld().spawnEntity(p.getLocation(), EntityType.BAT);
 			p.getWorld().spawnEntity(p.getLocation(), EntityType.BAT);
 			p.getWorld().spawnEntity(p.getLocation(), EntityType.BAT);
@@ -113,10 +113,10 @@ public class DefenceSkills implements Listener {
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Eight").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Eight"))) {
-		    if (sort == 1 && peutTirer == true) {
+		    if (skill == 1 && canFire == true) {
 			// ///
-			p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10 * secondes, 0));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 10 * secondes, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10 * seconds, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 10 * seconds, 0));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Eight"));
 			config.set(tirer, false);
@@ -124,10 +124,10 @@ public class DefenceSkills implements Listener {
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		    if (sort == 3 && peutTirer == true) {
+		    if (skill == 3 && canFire == true) {
 			// ///
-			p.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 15 * secondes, 0));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 15 * secondes, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 15 * seconds, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 15 * seconds, 0));
 			// //
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Nine"));
 			config.set(tirer, false);
@@ -136,11 +136,11 @@ public class DefenceSkills implements Listener {
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Nine").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Nine"))) {
-		    if (sort == 4 && peutTirer == true) {
+		    if (skill == 4 && canFire == true) {
 			// ///
 			p.getWorld().playEffect(p.getEyeLocation(), Effect.ENDEREYE_LAUNCH, 1);
-			p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 20 * secondes, 0));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 20 * secondes, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 20 * seconds, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 20 * seconds, 0));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Ten"));
 			config.set(tirer, false);

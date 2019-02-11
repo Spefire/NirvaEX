@@ -24,7 +24,7 @@ public class TargetedSkills implements Listener {
 
     private Nirva plugin;
     private int range = 20;
-    private int secondes = 20;
+    private int seconds = 20;
 
     public TargetedSkills(Nirva plugin) {
 	this.plugin = plugin;
@@ -43,20 +43,20 @@ public class TargetedSkills implements Listener {
 	    String langages = "languages." + p.getName();
 	    String langage = config.getString(langages);
 	    String tirer = "loading." + p.getName();
-	    boolean peutTirer = config.getBoolean(tirer);
+	    boolean canFire = config.getBoolean(tirer);
 	    String arg = "ability." + p.getName();
-	    int sort = config.getInt(arg);
+	    int skill = config.getInt(arg);
 	    if ((event.getAction() == Action.LEFT_CLICK_AIR) || (event.getAction() == Action.LEFT_CLICK_BLOCK)) {
 		LivingEntity entity = getTarget(p, range);
 		if (modifi.getString("Class.Three").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Three"))) {
-		    if (sort == 1 && peutTirer == true) {
+		    if (skill == 1 && canFire == true) {
 			// ///
 			p.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, 1, 0));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 5 * secondes, 2));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 5 * seconds, 2));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 1, 2));
 			if (entity != null) {
 			    entity.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, 1, 0));
-			    entity.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 5 * secondes, 2));
+			    entity.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 5 * seconds, 2));
 			    entity.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 1, 2));
 			}
 			// ///
@@ -66,7 +66,7 @@ public class TargetedSkills implements Listener {
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		    if (sort == 3 && peutTirer == true) {
+		    if (skill == 3 && canFire == true) {
 			// ///
 			p.removePotionEffect(PotionEffectType.BLINDNESS);
 			p.removePotionEffect(PotionEffectType.CONFUSION);
@@ -95,7 +95,7 @@ public class TargetedSkills implements Listener {
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		    if (sort == 4 && peutTirer == true && entity != null) {
+		    if (skill == 4 && canFire == true && entity != null) {
 			// ///
 			entity.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
 			entity.removePotionEffect(PotionEffectType.LUCK);
@@ -117,10 +117,10 @@ public class TargetedSkills implements Listener {
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Four").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Four"))) {
-		    if (sort == 1 && peutTirer == true && entity != null) {
+		    if (skill == 1 && canFire == true && entity != null) {
 			// ///
-			entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 10 * secondes, 2));
-			entity.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 10 * secondes, 0));
+			entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 10 * seconds, 2));
+			entity.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 10 * seconds, 0));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Four"));
 			config.set(tirer, false);
@@ -129,10 +129,10 @@ public class TargetedSkills implements Listener {
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Six").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Six"))) {
-		    if (sort == 3 && peutTirer == true && entity != null) {
+		    if (skill == 3 && canFire == true && entity != null) {
 			// ////
-			entity.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 10 * secondes, 1));
-			entity.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 10 * secondes, 1));
+			entity.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 10 * seconds, 1));
+			entity.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 10 * seconds, 1));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Five"));
 			config.set(tirer, false);
@@ -141,17 +141,17 @@ public class TargetedSkills implements Listener {
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Seven").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Seven"))) {
-		    if (sort == 1 && peutTirer == true) {
+		    if (skill == 1 && canFire == true) {
 			// ///
-			p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 15 * secondes, 0));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 15 * secondes, 0));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 15 * secondes, 0));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 15 * secondes, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 15 * seconds, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 15 * seconds, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 15 * seconds, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 15 * seconds, 0));
 			if (entity != null) {
-			    entity.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 15 * secondes, 0));
-			    entity.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 15 * secondes, 0));
-			    entity.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 15 * secondes, 0));
-			    entity.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 15 * secondes, 0));
+			    entity.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 15 * seconds, 0));
+			    entity.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 15 * seconds, 0));
+			    entity.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 15 * seconds, 0));
+			    entity.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 15 * seconds, 0));
 			}
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Six"));
@@ -161,11 +161,11 @@ public class TargetedSkills implements Listener {
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Nine").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Nine"))) {
-		    if (sort == 2 && peutTirer == true) {
+		    if (skill == 2 && canFire == true) {
 			// ///
-			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 5 * secondes, 0));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 5 * seconds, 0));
 			if (entity != null) {
-			    entity.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 10 * secondes, 0));
+			    entity.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 10 * seconds, 0));
 			}
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Seven"));

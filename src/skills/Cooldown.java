@@ -30,19 +30,19 @@ class Cooldown extends Thread {
 	    String langages = "languages." + p.getName();
 	    String langage = config.getString(langages);
 	    String tirer = "loading." + p.getName();
-	    long attente = modifi.getLong("Types.Cooldown");
-	    if ((attente - p.getLevel()) <= 5) {
-		attente = 5000; //5 secondes pour un niveau egal/superieur à 20
+	    long waitingTime = modifi.getLong("Types.Cooldown");
+	    if ((waitingTime - p.getLevel()) <= 5) {
+		waitingTime = 5000;
 	    }else{
-		attente = (attente - p.getLevel()) * 1000;
+		waitingTime = (waitingTime - p.getLevel()) * 1000;
 	    }
-	    p.sendMessage((attente / 1000) + "...");
-	    while (attente != 0) {
-		if (attente % 5000 == 0) {
-		    p.sendMessage((attente / 1000) + "...");
+	    p.sendMessage((waitingTime / 1000) + "...");
+	    while (waitingTime != 0) {
+		if (waitingTime % 5000 == 0) {
+		    p.sendMessage((waitingTime / 1000) + "...");
 		}
 		sleep(1000);
-		attente = attente - 1000;
+		waitingTime = waitingTime - 1000;
 	    }
 	    config.set(tirer, true);
 	    plugin.saveConfig();

@@ -198,57 +198,57 @@ public class PlayerCommands implements Listener {
 		String arg = "class." + p.getName();
 		String classe = config.getString(arg);
 		Player player = p;
-		ItemStack arme;
+		ItemStack weapon;
 		if (classe == null) {
 		    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nohaveclass"));
 		} else if (classe.equalsIgnoreCase(modif.getString("Class.Five"))) {
-		    arme = new ItemStack(Material.STONE_HOE);
-		    player.getInventory().addItem(arme);
-		    arme = new ItemStack(Material.SLIME_BALL);
-		    player.getInventory().addItem(arme);
+		    weapon = new ItemStack(Material.STONE_HOE);
+		    player.getInventory().addItem(weapon);
+		    weapon = new ItemStack(Material.SLIME_BALL);
+		    player.getInventory().addItem(weapon);
 		} else if (classe.equalsIgnoreCase(modif.getString("Class.One"))) {
-		    arme = new ItemStack(Material.STONE_SWORD);
-		    player.getInventory().addItem(arme);
-		    arme = new ItemStack(Material.SLIME_BALL);
-		    player.getInventory().addItem(arme);
+		    weapon = new ItemStack(Material.STONE_SWORD);
+		    player.getInventory().addItem(weapon);
+		    weapon = new ItemStack(Material.SLIME_BALL);
+		    player.getInventory().addItem(weapon);
 		} else if (classe.equalsIgnoreCase(modif.getString("Class.Seven"))) {
-		    arme = new ItemStack(Material.YELLOW_FLOWER);
-		    player.getInventory().addItem(arme);
-		    arme = new ItemStack(Material.SLIME_BALL);
-		    player.getInventory().addItem(arme);
+		    weapon = new ItemStack(Material.YELLOW_FLOWER);
+		    player.getInventory().addItem(weapon);
+		    weapon = new ItemStack(Material.SLIME_BALL);
+		    player.getInventory().addItem(weapon);
 		} else if (classe.equalsIgnoreCase(modif.getString("Class.Three"))) {
-		    arme = new ItemStack(Material.RED_ROSE);
-		    player.getInventory().addItem(arme);
-		    arme = new ItemStack(Material.SLIME_BALL);
-		    player.getInventory().addItem(arme);
+		    weapon = new ItemStack(Material.RED_ROSE);
+		    player.getInventory().addItem(weapon);
+		    weapon = new ItemStack(Material.SLIME_BALL);
+		    player.getInventory().addItem(weapon);
 		} else if (classe.equalsIgnoreCase(modif.getString("Class.Two"))) {
-		    arme = new ItemStack(Material.BOW);
-		    player.getInventory().addItem(arme);
-		    arme = new ItemStack(Material.ARROW);
-		    arme.setAmount(64);
-		    player.getInventory().addItem(arme);
-		    arme = new ItemStack(Material.SLIME_BALL);
-		    player.getInventory().addItem(arme);
+		    weapon = new ItemStack(Material.BOW);
+		    player.getInventory().addItem(weapon);
+		    weapon = new ItemStack(Material.ARROW);
+		    weapon.setAmount(64);
+		    player.getInventory().addItem(weapon);
+		    weapon = new ItemStack(Material.SLIME_BALL);
+		    player.getInventory().addItem(weapon);
 		} else if (classe.equalsIgnoreCase(modif.getString("Class.Four"))) {
-		    arme = new ItemStack(Material.PAPER);
-		    player.getInventory().addItem(arme);
-		    arme = new ItemStack(Material.SLIME_BALL);
-		    player.getInventory().addItem(arme);
+		    weapon = new ItemStack(Material.PAPER);
+		    player.getInventory().addItem(weapon);
+		    weapon = new ItemStack(Material.SLIME_BALL);
+		    player.getInventory().addItem(weapon);
 		} else if (classe.equalsIgnoreCase(modif.getString("Class.Six"))) {
-		    arme = new ItemStack(Material.FLINT);
-		    player.getInventory().addItem(arme);
-		    arme = new ItemStack(Material.SLIME_BALL);
-		    player.getInventory().addItem(arme);
+		    weapon = new ItemStack(Material.FLINT);
+		    player.getInventory().addItem(weapon);
+		    weapon = new ItemStack(Material.SLIME_BALL);
+		    player.getInventory().addItem(weapon);
 		} else if (classe.equalsIgnoreCase(modif.getString("Class.Eight"))) {
-		    arme = new ItemStack(Material.STONE_AXE);
-		    player.getInventory().addItem(arme);
-		    arme = new ItemStack(Material.SLIME_BALL);
-		    player.getInventory().addItem(arme);
+		    weapon = new ItemStack(Material.STONE_AXE);
+		    player.getInventory().addItem(weapon);
+		    weapon = new ItemStack(Material.SLIME_BALL);
+		    player.getInventory().addItem(weapon);
 		} else if (classe.equalsIgnoreCase(modif.getString("Class.Nine"))) {
-		    arme = new ItemStack(Material.STONE_SWORD);
-		    player.getInventory().addItem(arme);
-		    arme = new ItemStack(Material.SLIME_BALL);
-		    player.getInventory().addItem(arme);
+		    weapon = new ItemStack(Material.STONE_SWORD);
+		    player.getInventory().addItem(weapon);
+		    weapon = new ItemStack(Material.SLIME_BALL);
+		    player.getInventory().addItem(weapon);
 		}
 	    } else {
 		p.sendMessage(ChatColor.RED + modif.getString(langage + ".nopermittostuff"));

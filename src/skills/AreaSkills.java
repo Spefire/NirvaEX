@@ -24,7 +24,7 @@ public class AreaSkills implements Listener {
 
     private Nirva plugin;
     private int range = 7;
-    private int secondes = 20;
+    private int seconds = 20;
 
     public AreaSkills(Nirva plugin) {
 	this.plugin = plugin;
@@ -43,12 +43,12 @@ public class AreaSkills implements Listener {
 	    String langages = "languages." + p.getName();
 	    String langage = config.getString(langages);
 	    String tirer = "loading." + p.getName();
-	    boolean peutTirer = config.getBoolean(tirer);
+	    boolean canFire = config.getBoolean(tirer);
 	    String arg = "ability." + p.getName();
-	    int sort = config.getInt(arg);
+	    int skill = config.getInt(arg);
 	    if ((event.getAction() == Action.LEFT_CLICK_AIR) || (event.getAction() == Action.LEFT_CLICK_BLOCK)) {
 		if (modifi.getString("Class.Five").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Five"))) {
-		    if (sort == 2 && peutTirer == true) {
+		    if (skill == 2 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
 			Location ici = p.getLocation();
@@ -57,9 +57,9 @@ public class AreaSkills implements Listener {
 			    double distance = entity.getLocation().distance(ici);
 			    if (distance < range) {
 				used = true;
-				entity.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 20 * secondes, 0));
-				entity.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 10 * secondes, 0));
-				entity.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 10 * secondes, 2));
+				entity.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 20 * seconds, 0));
+				entity.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 10 * seconds, 0));
+				entity.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 10 * seconds, 2));
 			    }
 			}
 			// ///
@@ -72,7 +72,7 @@ public class AreaSkills implements Listener {
 			}
 		    }
 		} else if (modifi.getString("Class.Seven").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Seven"))) {
-		    if (sort == 3 && peutTirer == true) {
+		    if (skill == 3 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
 			Location ici = p.getLocation();
@@ -81,9 +81,9 @@ public class AreaSkills implements Listener {
 			    double distance = entity.getLocation().distance(ici);
 			    if (distance < range && entity != p) {
 				used = true;
-				entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 5 * secondes, 5));
-				entity.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 5 * secondes, 5));
-				entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 5 * secondes, 5));
+				entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 5 * seconds, 5));
+				entity.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 5 * seconds, 5));
+				entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 5 * seconds, 5));
 			    }
 			}
 			// ///
@@ -96,7 +96,7 @@ public class AreaSkills implements Listener {
 			}
 		    }
 		} else if (modifi.getString("Class.Four").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Four"))) {
-		    if (sort == 3 && peutTirer == true) {
+		    if (skill == 3 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
 			Location ici = p.getLocation();
@@ -119,7 +119,7 @@ public class AreaSkills implements Listener {
 			    rt.start();
 			}
 		    }
-		    if (sort == 2 && peutTirer == true) {
+		    if (skill == 2 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
 			Location ici = p.getLocation();
@@ -128,8 +128,8 @@ public class AreaSkills implements Listener {
 			    double distance = entity.getLocation().distance(ici);
 			    if (distance < range && entity != p) {
 				used = true;
-				entity.setFireTicks(10 * secondes);
-				entity.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, secondes / 4, 15));
+				entity.setFireTicks(10 * seconds);
+				entity.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, seconds / 4, 15));
 			    }
 			}
 			// ///
@@ -142,7 +142,7 @@ public class AreaSkills implements Listener {
 			}
 		    }
 		} else if (modifi.getString("Class.Six").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Six"))) {
-		    if (sort == 1 && peutTirer == true) {
+		    if (skill == 1 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
 			Location ici = p.getLocation();
@@ -151,8 +151,8 @@ public class AreaSkills implements Listener {
 			    double distance = entity.getLocation().distance(ici);
 			    if (distance < range && entity != p) {
 				used = true;
-				entity.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 15 * secondes, 1));
-				p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 15 * secondes, 0));
+				entity.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 15 * seconds, 1));
+				p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 15 * seconds, 0));
 			    }
 			}
 			// ///
@@ -164,7 +164,7 @@ public class AreaSkills implements Listener {
 			    rt.start();
 			}
 		    }
-		    if (sort == 2 && peutTirer == true) {
+		    if (skill == 2 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
 			Location ici = p.getLocation();
@@ -179,7 +179,7 @@ public class AreaSkills implements Listener {
 				used = true;
 				entity.damage(4);
 				entity.getWorld().createExplosion(entity.getLocation(), 0);
-				entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 5 * secondes, 2));
+				entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 5 * seconds, 2));
 				entity.setVelocity(attirance);
 			    }
 			}
@@ -192,7 +192,7 @@ public class AreaSkills implements Listener {
 			    rt.start();
 			}
 		    }
-		    if (sort == 4 && peutTirer == true) {
+		    if (skill == 4 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
 			Location ici = p.getLocation();
@@ -201,7 +201,7 @@ public class AreaSkills implements Listener {
 			    double distance = entity.getLocation().distance(ici);
 			    if (distance < range && entity != p) {
 				used = true;
-				entity.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 10 * secondes, 0));
+				entity.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 10 * seconds, 0));
 				entity.removePotionEffect(PotionEffectType.INVISIBILITY);
 				p.getWorld().playEffect(entity.getLocation(), Effect.MOBSPAWNER_FLAMES, 1);
 			    }
