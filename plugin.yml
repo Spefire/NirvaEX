@@ -1,0 +1,26 @@
+name: NirvaEx
+main: main.Nirva
+version: 5.0
+author: Spefire
+commands:
+  nclass:
+    description: To choice your class
+    usage: /nclass
+  nlevel:
+    description: To know your class and level
+    usage: /nlevel
+  nlanguage:
+    description: To change your language
+    usage: /nlanguage <English|French>
+  nhelp:
+    description: NirvaEx help
+    usage: /nhelp
+  nstuff:
+    description: To get your stuff
+    usage: /nstuff
+  nworld:
+    description: To set NirvaEx enable or disabled in this world
+    usage: /nsetworld <True/False>
+  nlocation:
+    description: To know if the plugin is actived at your location
+    usage: /nlocation
