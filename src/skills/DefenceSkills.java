@@ -38,8 +38,8 @@ public class DefenceSkills implements Listener {
 	    FileConfiguration config = plugin.getConfig();
 	    String path = "class." + p.getName();
 	    String classe = config.getString(path);
-	    String langages = "languages." + p.getName();
-	    String langage = config.getString(langages);
+	    String languages = "languages." + p.getName();
+	    String language = config.getString(languages);
 	    String load = "loading." + p.getName();
 	    boolean canFire = config.getBoolean(load);
 	    String arg = "ability." + p.getName();
@@ -54,7 +54,7 @@ public class DefenceSkills implements Listener {
 			p.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
 			p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 5 * seconds, 4));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Two"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Def.Two"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -66,7 +66,7 @@ public class DefenceSkills implements Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 15 * seconds, 1));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 15 * seconds, 1));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Three"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Def.Three"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -77,7 +77,7 @@ public class DefenceSkills implements Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 15 * seconds, 0));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 15 * seconds, 0));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Four"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Def.Four"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -89,7 +89,7 @@ public class DefenceSkills implements Listener {
 			Vector v = p.getEyeLocation().getDirection().setY(0).multiply(9);
 			p.setVelocity(v);
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Six"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Def.Six"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -106,7 +106,7 @@ public class DefenceSkills implements Listener {
 			p.sendMessage("I'M BATMMMMAAAANNNNNN !");
 			System.out.println("I'M BATMAN !");
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Seven"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Def.Seven"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -118,7 +118,7 @@ public class DefenceSkills implements Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10 * seconds, 0));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 10 * seconds, 0));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Eight"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Def.Eight"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -129,7 +129,7 @@ public class DefenceSkills implements Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 15 * seconds, 0));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 15 * seconds, 0));
 			// //
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Nine"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Def.Nine"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -142,7 +142,7 @@ public class DefenceSkills implements Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 20 * seconds, 0));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 20 * seconds, 0));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Ten"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Def.Ten"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);

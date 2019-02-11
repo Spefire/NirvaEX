@@ -40,8 +40,8 @@ public class TargetedSkills implements Listener {
 	    FileConfiguration config = plugin.getConfig();
 	    String path = "class." + p.getName();
 	    String classe = config.getString(path);
-	    String langages = "languages." + p.getName();
-	    String langage = config.getString(langages);
+	    String languages = "languages." + p.getName();
+	    String language = config.getString(languages);
 	    String load = "loading." + p.getName();
 	    boolean canFire = config.getBoolean(load);
 	    String arg = "ability." + p.getName();
@@ -60,7 +60,7 @@ public class TargetedSkills implements Listener {
 			    entity.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 1, 2));
 			}
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.One"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Vis.One"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -89,7 +89,7 @@ public class TargetedSkills implements Listener {
 			    entity.removePotionEffect(PotionEffectType.WITHER);
 			}
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Two"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Vis.Two"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -110,7 +110,7 @@ public class TargetedSkills implements Listener {
 			entity.removePotionEffect(PotionEffectType.ABSORPTION);
 			entity.removePotionEffect(PotionEffectType.HEALTH_BOOST);
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Three"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Vis.Three"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -122,7 +122,7 @@ public class TargetedSkills implements Listener {
 			entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 10 * seconds, 2));
 			entity.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 10 * seconds, 0));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Four"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Vis.Four"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -134,7 +134,7 @@ public class TargetedSkills implements Listener {
 			entity.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 10 * seconds, 1));
 			entity.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 10 * seconds, 1));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Five"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Vis.Five"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -154,7 +154,7 @@ public class TargetedSkills implements Listener {
 			    entity.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 15 * seconds, 0));
 			}
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Six"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Vis.Six"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -168,7 +168,7 @@ public class TargetedSkills implements Listener {
 			    entity.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 10 * seconds, 0));
 			}
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Seven"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Vis.Seven"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);

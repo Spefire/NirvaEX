@@ -27,8 +27,8 @@ class Cooldown extends Thread {
 	    FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 	    File fi = new File("plugins/NirvaEx/skills.yml");
 	    FileConfiguration modifi = YamlConfiguration.loadConfiguration(fi);
-	    String langages = "languages." + p.getName();
-	    String langage = config.getString(langages);
+	    String languages = "languages." + p.getName();
+	    String language = config.getString(languages);
 	    String load = "loading." + p.getName();
 	    long waitingTime = modifi.getLong("Types.Cooldown");
 	    if ((waitingTime - p.getLevel()) <= 5) {
@@ -47,7 +47,7 @@ class Cooldown extends Thread {
 	    config.set(load, true);
 	    plugin.saveConfig();
 	    p.getWorld().playEffect(p.getLocation(), Effect.EXTINGUISH, 1000);
-	    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".recharge"));
+	    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".recharge"));
 	} catch (InterruptedException e) {
 
 	} finally {

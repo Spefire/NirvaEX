@@ -35,17 +35,17 @@ public class PlayerCommands implements Listener {
 	FileConfiguration config = plugin.getConfig();
 	String load = "loading." + p.getName();
 	config.set(load, true);
-	String langages = "languages." + p.getName();
-	String langage = config.getString(langages);
+	String languages = "languages." + p.getName();
+	String language = config.getString(languages);
 	String ldefaut = "languages." + "Default";
 	String defaut = config.getString(ldefaut);
-	if (langage == null) {
+	if (language == null) {
 	    if (defaut == null) {
 		config.set(ldefaut, "English");
 		plugin.saveConfig();
 		defaut = config.getString(ldefaut);
 	    }
-	    config.set(langages, defaut);
+	    config.set(languages, defaut);
 	}
 	plugin.saveConfig();
     }
@@ -66,96 +66,96 @@ public class PlayerCommands implements Listener {
 	    File f = new File("plugins/NirvaEx/classes.yml");
 	    FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 	    FileConfiguration config = plugin.getConfig();
-	    String langages = "languages." + p.getName();
-	    String langage = config.getString(langages);
+	    String languages = "languages." + p.getName();
+	    String language = config.getString(languages);
 	    String path = "class." + p.getName();
 	    String category = config.getString(path);
 	    if (params.length == 2) {
-		p.sendMessage(ChatColor.RED + modif.getString(langage + ".warning"));
+		p.sendMessage(ChatColor.RED + modif.getString(language + ".warning"));
 		if (category == null || plugin.hasPermission(p, "nirva.change.class") || plugin.hasPermission(p, "nirva.admin")) {
 		    if (params[1].toLowerCase().equalsIgnoreCase(modif.getString("Class.One"))) {
 			if (plugin.hasPermission(p, "nirva.class.one") || plugin.hasPermission(p, "nirva.class.all") || plugin.hasPermission(p, "nirva.admin")) {
 			    config.set(path, modif.getString("Class.One"));
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".be") + modif.getString("Class.One"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".be") + modif.getString("Class.One"));
 			} else {
-			    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nopermittobe") + modif.getString("Class.One"));
+			    p.sendMessage(ChatColor.RED + modif.getString(language + ".nopermittobe") + modif.getString("Class.One"));
 			}
 		    } else if (params[1].toLowerCase().equalsIgnoreCase(modif.getString("Class.Two"))) {
 			if (plugin.hasPermission(p, "nirva.class.two") || plugin.hasPermission(p, "nirva.class.all") || plugin.hasPermission(p, "nirva.admin")) {
 			    config.set(path, modif.getString("Class.Two"));
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".be") + modif.getString("Class.Two"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".be") + modif.getString("Class.Two"));
 			} else {
-			    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nopermittobe") + modif.getString("Class.Two"));
+			    p.sendMessage(ChatColor.RED + modif.getString(language + ".nopermittobe") + modif.getString("Class.Two"));
 			}
 		    } else if (params[1].toLowerCase().equalsIgnoreCase(modif.getString("Class.Three"))) {
 			if (plugin.hasPermission(p, "nirva.class.three") || plugin.hasPermission(p, "nirva.class.all") || plugin.hasPermission(p, "nirva.admin")) {
 			    config.set(path, modif.getString("Class.Three"));
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".be") + modif.getString("Class.Three"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".be") + modif.getString("Class.Three"));
 			} else {
-			    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nopermittobe") + modif.getString("Class.Three"));
+			    p.sendMessage(ChatColor.RED + modif.getString(language + ".nopermittobe") + modif.getString("Class.Three"));
 			}
 		    } else if (params[1].toLowerCase().equalsIgnoreCase(modif.getString("Class.Four"))) {
 			if (plugin.hasPermission(p, "nirva.class.four") || plugin.hasPermission(p, "nirva.class.all") || plugin.hasPermission(p, "nirva.admin")) {
 			    config.set(path, modif.getString("Class.Four"));
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".be") + modif.getString("Class.Four"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".be") + modif.getString("Class.Four"));
 			} else {
-			    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nopermittobe") + modif.getString("Class.Four"));
+			    p.sendMessage(ChatColor.RED + modif.getString(language + ".nopermittobe") + modif.getString("Class.Four"));
 			}
 		    } else if (params[1].toLowerCase().equalsIgnoreCase(modif.getString("Class.Five"))) {
 			if (plugin.hasPermission(p, "nirva.class.five") || plugin.hasPermission(p, "nirva.class.all") || plugin.hasPermission(p, "nirva.admin")) {
 			    config.set(path, modif.getString("Class.Five"));
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".be") + modif.getString("Class.Five"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".be") + modif.getString("Class.Five"));
 			} else {
-			    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nopermittobe") + modif.getString("Class.Five"));
+			    p.sendMessage(ChatColor.RED + modif.getString(language + ".nopermittobe") + modif.getString("Class.Five"));
 			}
 		    } else if (params[1].toLowerCase().equalsIgnoreCase(modif.getString("Class.Six"))) {
 			if (plugin.hasPermission(p, "nirva.class.six") || plugin.hasPermission(p, "nirva.class.all") || plugin.hasPermission(p, "nirva.admin")) {
 			    config.set(path, modif.getString("Class.Six"));
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".be") + modif.getString("Class.Six"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".be") + modif.getString("Class.Six"));
 			} else {
-			    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nopermittobe") + modif.getString("Class.Six"));
+			    p.sendMessage(ChatColor.RED + modif.getString(language + ".nopermittobe") + modif.getString("Class.Six"));
 			}
 		    } else if (params[1].toLowerCase().equalsIgnoreCase(modif.getString("Class.Seven"))) {
 			if (plugin.hasPermission(p, "nirva.class.seven") || plugin.hasPermission(p, "nirva.class.all") || plugin.hasPermission(p, "nirva.admin")) {
 			    config.set(path, modif.getString("Class.Seven"));
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".be") + modif.getString("Class.Seven"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".be") + modif.getString("Class.Seven"));
 			} else {
-			    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nopermittobe") + modif.getString("Class.Seven"));
+			    p.sendMessage(ChatColor.RED + modif.getString(language + ".nopermittobe") + modif.getString("Class.Seven"));
 			}
 		    } else if (params[1].toLowerCase().equalsIgnoreCase(modif.getString("Class.Eight"))) {
 			if (plugin.hasPermission(p, "nirva.class.eight") || plugin.hasPermission(p, "nirva.class.all") || plugin.hasPermission(p, "nirva.admin")) {
 			    config.set(path, modif.getString("Class.Eight"));
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".be") + modif.getString("Class.Eight"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".be") + modif.getString("Class.Eight"));
 			} else {
-			    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nopermittobe") + modif.getString("Class.Eight"));
+			    p.sendMessage(ChatColor.RED + modif.getString(language + ".nopermittobe") + modif.getString("Class.Eight"));
 			}
 		    } else if (params[1].toLowerCase().equalsIgnoreCase(modif.getString("Class.Nine"))) {
 			if (plugin.hasPermission(p, "nirva.class.nine") || plugin.hasPermission(p, "nirva.class.all") || plugin.hasPermission(p, "nirva.admin")) {
 			    config.set(path, modif.getString("Class.Nine"));
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".be") + modif.getString("Class.Nine"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".be") + modif.getString("Class.Nine"));
 			} else {
-			    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nopermittobe") + modif.getString("Class.Nine"));
+			    p.sendMessage(ChatColor.RED + modif.getString(language + ".nopermittobe") + modif.getString("Class.Nine"));
 			}
 		    } else if (params[1].toLowerCase().equalsIgnoreCase(modif.getString("Class.Deleted"))) {
 			if (plugin.hasPermission(p, "nirva.delete.class") || plugin.hasPermission(p, "nirva.admin")) {
 			    config.set(path, "Deleted");
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".be") + modif.getString("Class.Deleted"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".be") + modif.getString("Class.Deleted"));
 			} else {
-			    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nopermittobe") + modif.getString("Class.Deleted"));
+			    p.sendMessage(ChatColor.RED + modif.getString(language + ".nopermittobe") + modif.getString("Class.Deleted"));
 			}
 		    }
 		} else {
-		    p.sendMessage(ChatColor.RED + modif.getString(langage + ".alreadyclass"));
+		    p.sendMessage(ChatColor.RED + modif.getString(language + ".alreadyclass"));
 		}
 	    } else {
 		p.sendMessage(ChatColor.RED + "/nclass " + modif.getString("Class.List"));
@@ -165,9 +165,9 @@ public class PlayerCommands implements Listener {
 	if (params[0].equalsIgnoreCase("/n") || params[0].equalsIgnoreCase("/nhelp")) {
 	    e.setCancelled(true);
 	    FileConfiguration config = plugin.getConfig();
-	    String langages = "languages." + p.getName();
-	    String langage = config.getString(langages);
-	    if ("French".equalsIgnoreCase(langage)) {
+	    String languages = "languages." + p.getName();
+	    String language = config.getString(languages);
+	    if ("French".equalsIgnoreCase(language)) {
 		p.sendMessage(ChatColor.AQUA + "---------" + ChatColor.WHITE + "Aide: NirvaEx" + ChatColor.AQUA + "--------------");
 		p.sendMessage(ChatColor.AQUA + "                          ");
 		p.sendMessage(ChatColor.AQUA + "/nclass: " + ChatColor.WHITE + "Choisir sa classe");
@@ -192,15 +192,15 @@ public class PlayerCommands implements Listener {
 	    File f = new File("plugins/NirvaEx/classes.yml");
 	    FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 	    FileConfiguration config = plugin.getConfig();
-	    String langages = "languages." + p.getName();
-	    String langage = config.getString(langages);
+	    String languages = "languages." + p.getName();
+	    String language = config.getString(languages);
 	    if (plugin.hasPermission(p, "nirva.have.stuff") || plugin.hasPermission(p, "nirva.admin")) {
 		String arg = "class." + p.getName();
 		String category = config.getString(arg);
 		Player player = p;
 		ItemStack weapon;
 		if (category == null) {
-		    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nohaveclass"));
+		    p.sendMessage(ChatColor.RED + modif.getString(language + ".nohaveclass"));
 		} else if (category.equalsIgnoreCase(modif.getString("Class.Five"))) {
 		    weapon = new ItemStack(Material.STONE_HOE);
 		    player.getInventory().addItem(weapon);
@@ -251,7 +251,7 @@ public class PlayerCommands implements Listener {
 		    player.getInventory().addItem(weapon);
 		}
 	    } else {
-		p.sendMessage(ChatColor.RED + modif.getString(langage + ".nopermittostuff"));
+		p.sendMessage(ChatColor.RED + modif.getString(language + ".nopermittostuff"));
 	    }
 	}
 
@@ -260,10 +260,10 @@ public class PlayerCommands implements Listener {
 	    FileConfiguration config = plugin.getConfig();
 	    String path = "class." + p.getName();
 	    String category = config.getString(path);
-	    String langages = "languages." + p.getName();
-	    String langage = config.getString(langages);
+	    String languages = "languages." + p.getName();
+	    String language = config.getString(languages);
 	    if (category != null && !category.equalsIgnoreCase(" ")) {
-		if ("French".equalsIgnoreCase(langage)) {
+		if ("French".equalsIgnoreCase(language)) {
 		    p.sendMessage(ChatColor.AQUA + "Votre classe est " + ChatColor.WHITE + category);
 		    int xp = (int) (p.getExp() * 100);
 		    p.sendMessage(ChatColor.AQUA + "Vous êtes Level " + p.getLevel() + " avec " + xp + "%");
@@ -273,7 +273,7 @@ public class PlayerCommands implements Listener {
 		    p.sendMessage(ChatColor.AQUA + "You are Level " + p.getLevel() + " with " + xp + "%");
 		}
 	    } else {
-		if ("French".equalsIgnoreCase(langage)) {
+		if ("French".equalsIgnoreCase(language)) {
 		    p.sendMessage(ChatColor.AQUA + "Vous n'avez pas de classe.");
 		    int xp = (int) (p.getExp() * 100);
 		    p.sendMessage(ChatColor.AQUA + "Vous êtes niveau " + p.getLevel() + " avec " + xp + "%");
@@ -302,9 +302,9 @@ public class PlayerCommands implements Listener {
 		    File fi = new File("plugins/NirvaEx/classes.yml");
 		    FileConfiguration modifi = YamlConfiguration.loadConfiguration(fi);
 		    FileConfiguration config = plugin.getConfig();
-		    String langages = "languages." + p.getName();
-		    String langage = config.getString(langages);
-		    p.sendMessage(ChatColor.AQUA + modifi.getString(langage + ".worldtrue"));
+		    String languages = "languages." + p.getName();
+		    String language = config.getString(languages);
+		    p.sendMessage(ChatColor.AQUA + modifi.getString(language + ".worldtrue"));
 		} else if (params.length == 2 && params[1].toLowerCase().startsWith("fa")) {
 		    File f = new File("plugins/NirvaEx/worlds.yml");
 		    try {
@@ -320,9 +320,9 @@ public class PlayerCommands implements Listener {
 		    File fi = new File("plugins/NirvaEx/classes.yml");
 		    FileConfiguration modifi = YamlConfiguration.loadConfiguration(fi);
 		    FileConfiguration config = plugin.getConfig();
-		    String langages = "languages." + p.getName();
-		    String langage = config.getString(langages);
-		    p.sendMessage(ChatColor.AQUA + modifi.getString(langage + ".worldfalse"));
+		    String languages = "languages." + p.getName();
+		    String language = config.getString(languages);
+		    p.sendMessage(ChatColor.AQUA + modifi.getString(language + ".worldfalse"));
 		}
 	    }
 	}
@@ -332,16 +332,16 @@ public class PlayerCommands implements Listener {
 		File fi = new File("plugins/NirvaEx/classes.yml");
 		FileConfiguration modifi = YamlConfiguration.loadConfiguration(fi);
 		FileConfiguration config = plugin.getConfig();
-		String langages = "languages." + p.getName();
-		String langage = config.getString(langages);
-		p.sendMessage(ChatColor.AQUA + modifi.getString(langage + ".locationtrue"));
+		String languages = "languages." + p.getName();
+		String language = config.getString(languages);
+		p.sendMessage(ChatColor.AQUA + modifi.getString(language + ".locationtrue"));
 	    } else {
 		File fi = new File("plugins/NirvaEx/classes.yml");
 		FileConfiguration modifi = YamlConfiguration.loadConfiguration(fi);
 		FileConfiguration config = plugin.getConfig();
-		String langages = "languages." + p.getName();
-		String langage = config.getString(langages);
-		p.sendMessage(ChatColor.AQUA + modifi.getString(langage + ".locationfalse"));
+		String languages = "languages." + p.getName();
+		String language = config.getString(languages);
+		p.sendMessage(ChatColor.AQUA + modifi.getString(language + ".locationfalse"));
 	    }
 	}
 	if (params[0].equalsIgnoreCase("/nlanguage")) {

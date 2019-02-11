@@ -41,8 +41,8 @@ public class AttackSkills implements Listener {
 		FileConfiguration config = plugin.getConfig();
 		String path = "class." + p.getName();
 		String category = config.getString(path);
-		String langages = "languages." + p.getName();
-		String langage = config.getString(langages);
+		String languages = "languages." + p.getName();
+		String language = config.getString(languages);
 		String load = "loading." + p.getName();
 		boolean canFire = config.getBoolean(load);
 		String arg = "ability." + p.getName();
@@ -54,7 +54,7 @@ public class AttackSkills implements Listener {
 			m.setVelocity(p.getEyeLocation().getDirection());
 			m.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, seconds / 4, 20));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.One"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.One"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -67,7 +67,7 @@ public class AttackSkills implements Listener {
 			m.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, seconds / 4, 20));
 			p.setVelocity(p.getEyeLocation().getDirection().multiply(5));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Two"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Two"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -79,7 +79,7 @@ public class AttackSkills implements Listener {
 			m.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 5 * seconds, 1));
 			m.setVelocity(p.getEyeLocation().getDirection().multiply(4));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Three"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Three"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -92,7 +92,7 @@ public class AttackSkills implements Listener {
 			m.addPotionEffect(new PotionEffect(PotionEffectType.HARM, 1, 0));
 			m.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 5 * seconds, 0));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Four"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Four"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -104,7 +104,7 @@ public class AttackSkills implements Listener {
 			m.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 5 * seconds, 1));
 			m.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 5 * seconds, 1));
 			// //
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Five"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Five"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -117,7 +117,7 @@ public class AttackSkills implements Listener {
 			m.setFireTicks(5 * seconds);
 			m.damage(4);
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Six"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Six"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -129,7 +129,7 @@ public class AttackSkills implements Listener {
 			m.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 5 * seconds, 5));
 			m.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 2 * seconds, 5));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Eleven"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Eleven"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -140,7 +140,7 @@ public class AttackSkills implements Listener {
 			m.addPotionEffect(new PotionEffect(PotionEffectType.HARM, 1, 0));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, 1, 0));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Twelve"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Twelve"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -153,7 +153,7 @@ public class AttackSkills implements Listener {
 			m.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 5 * seconds, 0));
 			m.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 5 * seconds, 2));
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Thirteen"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Thirteen"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -169,7 +169,7 @@ public class AttackSkills implements Listener {
 			    m.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 5 * seconds, 0));
 			}
 			// ///
-			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Fourteen"));
+			p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Fourteen"));
 			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
@@ -196,8 +196,8 @@ public class AttackSkills implements Listener {
 		    FileConfiguration config = plugin.getConfig();
 		    String path = "class." + p.getName();
 		    String category = config.getString(path);
-		    String langages = "languages." + p.getName();
-		    String langage = config.getString(langages);
+		    String languages = "languages." + p.getName();
+		    String language = config.getString(languages);
 		    String load = "loading." + p.getName();
 		    boolean canFire = config.getBoolean(load);
 		    String arg = "ability." + p.getName();
@@ -208,7 +208,7 @@ public class AttackSkills implements Listener {
 			    m.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 15 * seconds, 2));
 			    m.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 15 * seconds, 1));
 			    // ///
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Seven"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Seven"));
 			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
@@ -220,7 +220,7 @@ public class AttackSkills implements Listener {
 			    m.setFireTicks(5 * seconds);
 			    m.damage(2);
 			    // ////
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Eight"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Eight"));
 			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
@@ -232,7 +232,7 @@ public class AttackSkills implements Listener {
 			    m.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 10 * seconds, 1));
 			    m.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 10 * seconds, 1));
 			    // ///
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Nine"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Nine"));
 			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
@@ -245,7 +245,7 @@ public class AttackSkills implements Listener {
 			    m.damage(2);
 			    m.getWorld().createExplosion(m.getLocation(), 0);
 			    // ////
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Ten"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Atk.Ten"));
 			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);

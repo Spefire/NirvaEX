@@ -140,11 +140,11 @@ public class ConsoleCommands implements Listener {
 	}
 	if (params[0].equalsIgnoreCase("n") || params[0].equalsIgnoreCase("nhelp")) {
 	    FileConfiguration config = plugin.getConfig();
-	    String langages = "languages." + p.getName();
-	    String langage = config.getString(langages);
+	    String languages = "languages." + p.getName();
+	    String language = config.getString(languages);
 	    String ldefaut = "languages." + "Default";
 	    String defaut = config.getString(ldefaut);
-	    if ("French".equalsIgnoreCase(langage) || (!"French".equalsIgnoreCase(langage) && "French".equalsIgnoreCase(defaut))) {
+	    if ("French".equalsIgnoreCase(language) || (!"French".equalsIgnoreCase(language) && "French".equalsIgnoreCase(defaut))) {
 		p.sendMessage(ChatColor.AQUA + "---------" + ChatColor.WHITE + "Aide: NirvaEx" + ChatColor.AQUA + "--------------");
 		p.sendMessage(ChatColor.AQUA + "                          ");
 		p.sendMessage(ChatColor.AQUA + "nchat: " + ChatColor.WHITE + "Activer ou non le NirvaChat");

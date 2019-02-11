@@ -40,8 +40,8 @@ public class AreaSkills implements Listener {
 	    FileConfiguration config = plugin.getConfig();
 	    String path = "class." + p.getName();
 	    String category = config.getString(path);
-	    String langages = "languages." + p.getName();
-	    String langage = config.getString(langages);
+	    String languages = "languages." + p.getName();
+	    String language = config.getString(languages);
 	    String load = "loading." + p.getName();
 	    boolean canFire = config.getBoolean(load);
 	    String arg = "ability." + p.getName();
@@ -64,7 +64,7 @@ public class AreaSkills implements Listener {
 			}
 			// ///
 			if (used) {
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.One"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Zon.One"));
 			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
@@ -88,7 +88,7 @@ public class AreaSkills implements Listener {
 			}
 			// ///
 			if (used) {
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Two"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Zon.Two"));
 			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
@@ -112,7 +112,7 @@ public class AreaSkills implements Listener {
 			}
 			// ///
 			if (used) {
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Three"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Zon.Three"));
 			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
@@ -134,7 +134,7 @@ public class AreaSkills implements Listener {
 			}
 			// ///
 			if (used) {
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Four"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Zon.Four"));
 			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
@@ -157,7 +157,7 @@ public class AreaSkills implements Listener {
 			}
 			// ///
 			if (used) {
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Six"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Zon.Six"));
 			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
@@ -185,7 +185,7 @@ public class AreaSkills implements Listener {
 			}
 			// ///
 			if (used) {
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Nine"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Zon.Nine"));
 			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
@@ -208,7 +208,7 @@ public class AreaSkills implements Listener {
 			}
 			// ///
 			if (used) {
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Seven"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".use") + ChatColor.WHITE + modif.getString(language + ".Zon.Seven"));
 			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);

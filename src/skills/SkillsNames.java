@@ -33,216 +33,216 @@ public class SkillsNames implements Listener {
 		if ((event.getAction() == Action.RIGHT_CLICK_AIR) || (event.getAction() == Action.RIGHT_CLICK_BLOCK)) {
 		    FileConfiguration config = plugin.getConfig();
 		    String path = "class." + p.getName();
-		    String classe = config.getString(path);
-		    String langages = "languages." + p.getName();
-		    String langage = config.getString(langages);
+		    String category = config.getString(path);
+		    String languages = "languages." + p.getName();
+		    String language = config.getString(languages);
 		    String arg = "ability." + p.getName();
 		    int skill = config.getInt(arg);
-		    if (modifi.getString("Class.Two").equalsIgnoreCase(classe)) {
+		    if (modifi.getString("Class.Two").equalsIgnoreCase(category)) {
 			if (skill == 0 || skill >= 5) {
 			    config.set(arg, 1);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Seven"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Seven"));
 			} else if (skill == 1) {
 			    config.set(arg, 2);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Eight"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Eight"));
 			} else if (skill == 2) {
 			    config.set(arg, 3);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Nine"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Nine"));
 			} else if (skill == 3) {
 			    config.set(arg, 4);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Ten"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Ten"));
 			} else if (skill == 4) {
 			    config.set(arg, 5);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".Pass.Nothing"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".Pass.Nothing"));
 			}
 		    }
-		    if (modifi.getString("Class.Seven").equalsIgnoreCase(classe)) {
+		    if (modifi.getString("Class.Seven").equalsIgnoreCase(category)) {
 			if (skill == 0 || skill >= 5) {
 			    config.set(arg, 1);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.DefVis") + ChatColor.WHITE + modif.getString(langage + ".Vis.Six"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.DefVis") + ChatColor.WHITE + modif.getString(language + ".Vis.Six"));
 			} else if (skill == 1) {
 			    config.set(arg, 2);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Six"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Six"));
 			} else if (skill == 2) {
 			    config.set(arg, 3);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Zon") + ChatColor.WHITE + modif.getString(langage + ".Zon.Two"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Zon") + ChatColor.WHITE + modif.getString(language + ".Zon.Two"));
 			} else if (skill == 3) {
 			    config.set(arg, 4);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(langage + ".Def.Two"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(language + ".Def.Two"));
 			} else if (skill == 4) {
 			    config.set(arg, 5);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".Pass.Nothing"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".Pass.Nothing"));
 			}
 		    }
-		    if (modifi.getString("Class.One").equalsIgnoreCase(classe)) {
+		    if (modifi.getString("Class.One").equalsIgnoreCase(category)) {
 			if (skill == 0 || skill >= 5) {
 			    config.set(arg, 1);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Two"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Two"));
 			} else if (skill == 1) {
 			    config.set(arg, 2);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(langage + ".Def.Three"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(language + ".Def.Three"));
 			} else if (skill == 2) {
 			    config.set(arg, 3);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(langage + ".Def.Four"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(language + ".Def.Four"));
 			} else if (skill == 3) {
 			    config.set(arg, 4);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.One"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.One"));
 			} else if (skill == 4) {
 			    config.set(arg, 5);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".Pass.Nothing"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".Pass.Nothing"));
 			}
 		    }
-		    if (modifi.getString("Class.Four").equalsIgnoreCase(classe)) {
+		    if (modifi.getString("Class.Four").equalsIgnoreCase(category)) {
 			if (skill == 0 || skill >= 5) {
 			    config.set(arg, 1);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Vis") + ChatColor.WHITE + modif.getString(langage + ".Vis.Four"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Vis") + ChatColor.WHITE + modif.getString(language + ".Vis.Four"));
 			} else if (skill == 1) {
 			    config.set(arg, 2);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Zon") + ChatColor.WHITE + modif.getString(langage + ".Zon.Four"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Zon") + ChatColor.WHITE + modif.getString(language + ".Zon.Four"));
 			} else if (skill == 2) {
 			    config.set(arg, 3);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Zon") + ChatColor.WHITE + modif.getString(langage + ".Zon.Three"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Zon") + ChatColor.WHITE + modif.getString(language + ".Zon.Three"));
 			} else if (skill == 3) {
 			    config.set(arg, 4);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(langage + ".Def.Six"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(language + ".Def.Six"));
 			} else if (skill == 4) {
 			    config.set(arg, 5);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".Pass.Nothing"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".Pass.Nothing"));
 			}
 		    }
-		    if (modifi.getString("Class.Six").equalsIgnoreCase(classe)) {
+		    if (modifi.getString("Class.Six").equalsIgnoreCase(category)) {
 			if (skill == 0 || skill >= 5) {
 			    config.set(arg, 1);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.DefZon") + ChatColor.WHITE + modif.getString(langage + ".Zon.Six"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.DefZon") + ChatColor.WHITE + modif.getString(language + ".Zon.Six"));
 			} else if (skill == 1) {
 			    config.set(arg, 2);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Zon") + ChatColor.WHITE + modif.getString(langage + ".Zon.Nine"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Zon") + ChatColor.WHITE + modif.getString(language + ".Zon.Nine"));
 			} else if (skill == 2) {
 			    config.set(arg, 3);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Vis") + ChatColor.WHITE + modif.getString(langage + ".Vis.Five"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Vis") + ChatColor.WHITE + modif.getString(language + ".Vis.Five"));
 			} else if (skill == 3) {
 			    config.set(arg, 4);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Zon") + ChatColor.WHITE + modif.getString(langage + ".Zon.Seven"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Zon") + ChatColor.WHITE + modif.getString(language + ".Zon.Seven"));
 			} else if (skill == 4) {
 			    config.set(arg, 5);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".Pass.Nothing"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".Pass.Nothing"));
 			}
 		    }
-		    if (modifi.getString("Class.Three").equalsIgnoreCase(classe)) {
+		    if (modifi.getString("Class.Three").equalsIgnoreCase(category)) {
 			if (skill == 0 || skill >= 5) {
 			    config.set(arg, 1);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.DefVis") + ChatColor.WHITE + modif.getString(langage + ".Vis.One"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.DefVis") + ChatColor.WHITE + modif.getString(language + ".Vis.One"));
 			} else if (skill == 1) {
 			    config.set(arg, 2);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Three"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Three"));
 			} else if (skill == 2) {
 			    config.set(arg, 3);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.DefVis") + ChatColor.WHITE + modif.getString(langage + ".Vis.Two"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.DefVis") + ChatColor.WHITE + modif.getString(language + ".Vis.Two"));
 			} else if (skill == 3) {
 			    config.set(arg, 4);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Vis") + ChatColor.WHITE + modif.getString(langage + ".Vis.Three"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Vis") + ChatColor.WHITE + modif.getString(language + ".Vis.Three"));
 			} else if (skill == 4) {
 			    config.set(arg, 5);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".Pass.Nothing"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".Pass.Nothing"));
 			}
 		    }
-		    if (modifi.getString("Class.Five").equalsIgnoreCase(classe)) {
+		    if (modifi.getString("Class.Five").equalsIgnoreCase(category)) {
 			if (skill == 0 || skill >= 5) {
 			    config.set(arg, 1);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(langage + ".Def.Seven"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(language + ".Def.Seven"));
 			} else if (skill == 1) {
 			    config.set(arg, 2);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.DefZon") + ChatColor.WHITE + modif.getString(langage + ".Zon.One"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.DefZon") + ChatColor.WHITE + modif.getString(language + ".Zon.One"));
 			} else if (skill == 2) {
 			    config.set(arg, 3);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Four"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Four"));
 			} else if (skill == 3) {
 			    config.set(arg, 4);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Five"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Five"));
 			} else if (skill == 4) {
 			    config.set(arg, 5);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".Pass.Nothing"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".Pass.Nothing"));
 			}
 		    }
-		    if (modifi.getString("Class.Eight").equalsIgnoreCase(classe)) {
+		    if (modifi.getString("Class.Eight").equalsIgnoreCase(category)) {
 			if (skill == 0 || skill >= 5) {
 			    config.set(arg, 1);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(langage + ".Def.Eight"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(language + ".Def.Eight"));
 			} else if (skill == 1) {
 			    config.set(arg, 2);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Eleven"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Eleven"));
 			} else if (skill == 2) {
 			    config.set(arg, 3);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(langage + ".Def.Nine"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(language + ".Def.Nine"));
 			} else if (skill == 3) {
 			    config.set(arg, 4);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Twelve"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Twelve"));
 			} else if (skill == 4) {
 			    config.set(arg, 5);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".Pass.Nothing"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".Pass.Nothing"));
 			}
 		    }
-		    if (modifi.getString("Class.Nine").equalsIgnoreCase(classe)) {
+		    if (modifi.getString("Class.Nine").equalsIgnoreCase(category)) {
 			if (skill == 0 || skill >= 5) {
 			    config.set(arg, 1);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Thirteen"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Thirteen"));
 			} else if (skill == 1) {
 			    config.set(arg, 2);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.DefVis") + ChatColor.WHITE + modif.getString(langage + ".Vis.Seven"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.DefVis") + ChatColor.WHITE + modif.getString(language + ".Vis.Seven"));
 			} else if (skill == 2) {
 			    config.set(arg, 3);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(langage + ".Atk.Fourteen"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Atk") + ChatColor.WHITE + modif.getString(language + ".Atk.Fourteen"));
 			} else if (skill == 3) {
 			    config.set(arg, 4);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(langage + ".Def.Ten"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString("Types.Def") + ChatColor.WHITE + modif.getString(language + ".Def.Ten"));
 			} else if (skill == 4) {
 			    config.set(arg, 5);
 			    plugin.saveConfig();
-			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".Pass.Nothing"));
+			    p.sendMessage(ChatColor.AQUA + modif.getString(language + ".Pass.Nothing"));
 			}
 		    }
 		}
