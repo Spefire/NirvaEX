@@ -39,7 +39,7 @@ public class TargetedSkills implements Listener {
 	    FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 	    FileConfiguration config = plugin.getConfig();
 	    String path = "class." + p.getName();
-	    String classe = config.getString(path);
+	    String category = config.getString(path);
 	    String languages = "languages." + p.getName();
 	    String language = config.getString(languages);
 	    String load = "loading." + p.getName();
@@ -48,7 +48,7 @@ public class TargetedSkills implements Listener {
 	    int skill = config.getInt(arg);
 	    if ((event.getAction() == Action.LEFT_CLICK_AIR) || (event.getAction() == Action.LEFT_CLICK_BLOCK)) {
 		LivingEntity entity = getTarget(p, range);
-		if (modifi.getString("Class.Three").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Three"))) {
+		if (modifi.getString("Class.Three").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Three"))) {
 		    if (skill == 1 && canFire == true) {
 			// ///
 			p.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, 1, 0));
@@ -116,7 +116,7 @@ public class TargetedSkills implements Listener {
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		} else if (modifi.getString("Class.Four").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Four"))) {
+		} else if (modifi.getString("Class.Four").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Four"))) {
 		    if (skill == 1 && canFire == true && entity != null) {
 			// ///
 			entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 10 * seconds, 2));
@@ -128,7 +128,7 @@ public class TargetedSkills implements Listener {
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		} else if (modifi.getString("Class.Six").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Six"))) {
+		} else if (modifi.getString("Class.Six").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Six"))) {
 		    if (skill == 3 && canFire == true && entity != null) {
 			// ////
 			entity.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 10 * seconds, 1));
@@ -140,7 +140,7 @@ public class TargetedSkills implements Listener {
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		} else if (modifi.getString("Class.Seven").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Seven"))) {
+		} else if (modifi.getString("Class.Seven").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Seven"))) {
 		    if (skill == 1 && canFire == true) {
 			// ///
 			p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 15 * seconds, 0));
@@ -160,7 +160,7 @@ public class TargetedSkills implements Listener {
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		} else if (modifi.getString("Class.Nine").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Nine"))) {
+		} else if (modifi.getString("Class.Nine").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Nine"))) {
 		    if (skill == 2 && canFire == true) {
 			// ///
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 5 * seconds, 0));

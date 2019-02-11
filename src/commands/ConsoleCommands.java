@@ -44,60 +44,60 @@ public class ConsoleCommands implements Listener {
 	    File f = new File("plugins/NirvaEx/classes.yml");
 	    FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 	    if (params.length == 3) {
-		String nameplayer = params[1].toString();
+		String namePlayer = params[1].toString();
 		FileConfiguration config = plugin.getConfig();
 		String ldefaut = "languages." + "Default";
 		String defaut = config.getString(ldefaut);
 		if (params[2].toLowerCase().equalsIgnoreCase(modif.getString("Class.One"))) {
-		    String path = "class." + nameplayer;
+		    String path = "class." + namePlayer;
 		    config.set(path, modif.getString("Class.One"));
 		    plugin.saveConfig();
-		    p.sendMessage(ChatColor.AQUA + nameplayer + modif.getString(defaut + ".change") + modif.getString("Class.One"));
+		    p.sendMessage(ChatColor.AQUA + namePlayer + modif.getString(defaut + ".change") + modif.getString("Class.One"));
 		} else if (params[2].toLowerCase().equalsIgnoreCase(modif.getString("Class.Two"))) {
-		    String path = "class." + nameplayer;
+		    String path = "class." + namePlayer;
 		    config.set(path, modif.getString("Class.Two"));
 		    plugin.saveConfig();
-		    p.sendMessage(ChatColor.AQUA + nameplayer + modif.getString(defaut + ".change") + modif.getString("Class.Two"));
+		    p.sendMessage(ChatColor.AQUA + namePlayer + modif.getString(defaut + ".change") + modif.getString("Class.Two"));
 		} else if (params[2].toLowerCase().equalsIgnoreCase(modif.getString("Class.Three"))) {
-		    String path = "class." + nameplayer;
+		    String path = "class." + namePlayer;
 		    config.set(path, modif.getString("Class.Three"));
 		    plugin.saveConfig();
-		    p.sendMessage(ChatColor.AQUA + nameplayer + modif.getString(defaut + ".change") + modif.getString("Class.Three"));
+		    p.sendMessage(ChatColor.AQUA + namePlayer + modif.getString(defaut + ".change") + modif.getString("Class.Three"));
 		} else if (params[2].toLowerCase().equalsIgnoreCase(modif.getString("Class.Four"))) {
-		    String path = "class." + nameplayer;
+		    String path = "class." + namePlayer;
 		    config.set(path, modif.getString("Class.Four"));
 		    plugin.saveConfig();
-		    p.sendMessage(ChatColor.AQUA + nameplayer + modif.getString(defaut + ".change") + modif.getString("Class.Four"));
+		    p.sendMessage(ChatColor.AQUA + namePlayer + modif.getString(defaut + ".change") + modif.getString("Class.Four"));
 		} else if (params[2].toLowerCase().equalsIgnoreCase(modif.getString("Class.Five"))) {
-		    String path = "class." + nameplayer;
+		    String path = "class." + namePlayer;
 		    config.set(path, modif.getString("Class.Five"));
 		    plugin.saveConfig();
-		    p.sendMessage(ChatColor.AQUA + nameplayer + modif.getString(defaut + ".change") + modif.getString("Class.Five"));
+		    p.sendMessage(ChatColor.AQUA + namePlayer + modif.getString(defaut + ".change") + modif.getString("Class.Five"));
 		} else if (params[2].toLowerCase().equalsIgnoreCase(modif.getString("Class.Six"))) {
-		    String path = "class." + nameplayer;
+		    String path = "class." + namePlayer;
 		    config.set(path, modif.getString("Class.Six"));
 		    plugin.saveConfig();
-		    p.sendMessage(ChatColor.AQUA + nameplayer + modif.getString(defaut + ".change") + modif.getString("Class.Six"));
+		    p.sendMessage(ChatColor.AQUA + namePlayer + modif.getString(defaut + ".change") + modif.getString("Class.Six"));
 		} else if (params[2].toLowerCase().equalsIgnoreCase(modif.getString("Class.Seven"))) {
-		    String path = "class." + nameplayer;
+		    String path = "class." + namePlayer;
 		    config.set(path, modif.getString("Class.Seven"));
 		    plugin.saveConfig();
-		    p.sendMessage(ChatColor.AQUA + nameplayer + modif.getString(defaut + ".change") + modif.getString("Class.Seven"));
+		    p.sendMessage(ChatColor.AQUA + namePlayer + modif.getString(defaut + ".change") + modif.getString("Class.Seven"));
 		} else if (params[2].toLowerCase().equalsIgnoreCase(modif.getString("Class.Eight"))) {
-		    String path = "class." + nameplayer;
+		    String path = "class." + namePlayer;
 		    config.set(path, modif.getString("Class.Eight"));
 		    plugin.saveConfig();
-		    p.sendMessage(ChatColor.AQUA + nameplayer + modif.getString(defaut + ".change") + modif.getString("Class.Eight"));
+		    p.sendMessage(ChatColor.AQUA + namePlayer + modif.getString(defaut + ".change") + modif.getString("Class.Eight"));
 		} else if (params[2].toLowerCase().equalsIgnoreCase(modif.getString("Class.Nine"))) {
-		    String path = "class." + nameplayer;
+		    String path = "class." + namePlayer;
 		    config.set(path, modif.getString("Class.Nine"));
 		    plugin.saveConfig();
-		    p.sendMessage(ChatColor.AQUA + nameplayer + modif.getString(defaut + ".change") + modif.getString("Class.Nine"));
+		    p.sendMessage(ChatColor.AQUA + namePlayer + modif.getString(defaut + ".change") + modif.getString("Class.Nine"));
 		} else if (params[2].toLowerCase().equalsIgnoreCase(modif.getString("Class.Deleted"))) {
-		    String path = "class." + nameplayer;
+		    String path = "class." + namePlayer;
 		    config.set(path, " ");
 		    plugin.saveConfig();
-		    p.sendMessage(ChatColor.AQUA + nameplayer + " deleted !");
+		    p.sendMessage(ChatColor.AQUA + namePlayer + " deleted !");
 		}
 	    } else {
 		p.sendMessage(ChatColor.RED + "!!! Uppercase and lowercase letters !!!");
