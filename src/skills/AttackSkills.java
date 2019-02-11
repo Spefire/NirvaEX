@@ -40,14 +40,14 @@ public class AttackSkills implements Listener {
 		FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 		FileConfiguration config = plugin.getConfig();
 		String path = "class." + p.getName();
-		String classe = config.getString(path);
+		String category = config.getString(path);
 		String langages = "languages." + p.getName();
 		String langage = config.getString(langages);
-		String tirer = "loading." + p.getName();
-		boolean canFire = config.getBoolean(tirer);
+		String load = "loading." + p.getName();
+		boolean canFire = config.getBoolean(load);
 		String arg = "ability." + p.getName();
 		int skill = config.getInt(arg);
-		if (modifi.getString("Class.One").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.One"))) {
+		if (modifi.getString("Class.One").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.One"))) {
 		    if (skill == 4 && canFire == true) {
 			// ///
 			m.damage(2);
@@ -55,7 +55,7 @@ public class AttackSkills implements Listener {
 			m.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, seconds / 4, 20));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.One"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -68,24 +68,24 @@ public class AttackSkills implements Listener {
 			p.setVelocity(p.getEyeLocation().getDirection().multiply(5));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Two"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		} else if (modifi.getString("Class.Three").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Three"))) {
+		} else if (modifi.getString("Class.Three").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Three"))) {
 		    if (skill == 2 && canFire == true) {
 			// ///
 			m.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 5 * seconds, 1));
 			m.setVelocity(p.getEyeLocation().getDirection().multiply(4));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Three"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		} else if (modifi.getString("Class.Five").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Five"))) {
+		} else if (modifi.getString("Class.Five").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Five"))) {
 		    if (skill == 3 && canFire == true) {
 			// ///
 			m.damage(1);
@@ -93,7 +93,7 @@ public class AttackSkills implements Listener {
 			m.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 5 * seconds, 0));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Four"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -105,12 +105,12 @@ public class AttackSkills implements Listener {
 			m.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 5 * seconds, 1));
 			// //
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Five"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		} else if (modifi.getString("Class.Seven").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Seven"))) {
+		} else if (modifi.getString("Class.Seven").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Seven"))) {
 		    if (skill == 2 && canFire == true) {
 			// ///
 			p.getWorld().strikeLightningEffect(m.getLocation());
@@ -118,19 +118,19 @@ public class AttackSkills implements Listener {
 			m.damage(4);
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Six"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		} else if (modifi.getString("Class.Eight").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Eight"))) {
+		} else if (modifi.getString("Class.Eight").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Eight"))) {
 		    if (skill == 2 && canFire == true) {
 			// ///
 			m.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 5 * seconds, 5));
 			m.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 2 * seconds, 5));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Eleven"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -141,12 +141,12 @@ public class AttackSkills implements Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, 1, 0));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Twelve"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
-		} else if (modifi.getString("Class.Nine").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Nine"))) {
+		} else if (modifi.getString("Class.Nine").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Nine"))) {
 		    if (skill == 1 && canFire == true) {
 			// ///
 			m.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 5 * seconds, 2));
@@ -154,7 +154,7 @@ public class AttackSkills implements Listener {
 			m.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 5 * seconds, 2));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Thirteen"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -170,7 +170,7 @@ public class AttackSkills implements Listener {
 			}
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Fourteen"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -195,21 +195,21 @@ public class AttackSkills implements Listener {
 		    FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 		    FileConfiguration config = plugin.getConfig();
 		    String path = "class." + p.getName();
-		    String classe = config.getString(path);
+		    String category = config.getString(path);
 		    String langages = "languages." + p.getName();
 		    String langage = config.getString(langages);
-		    String tirer = "loading." + p.getName();
-		    boolean canFire = config.getBoolean(tirer);
+		    String load = "loading." + p.getName();
+		    boolean canFire = config.getBoolean(load);
 		    String arg = "ability." + p.getName();
 		    int skill = config.getInt(arg);
-		    if (modifi.getString("Class.Two").equalsIgnoreCase(classe)) {
+		    if (modifi.getString("Class.Two").equalsIgnoreCase(category)) {
 			if (skill == 1 && canFire == true) {
 			    // ///
 			    m.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 15 * seconds, 2));
 			    m.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 15 * seconds, 1));
 			    // ///
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Seven"));
-			    config.set(tirer, false);
+			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
@@ -221,7 +221,7 @@ public class AttackSkills implements Listener {
 			    m.damage(2);
 			    // ////
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Eight"));
-			    config.set(tirer, false);
+			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
@@ -233,7 +233,7 @@ public class AttackSkills implements Listener {
 			    m.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 10 * seconds, 1));
 			    // ///
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Nine"));
-			    config.set(tirer, false);
+			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
@@ -246,7 +246,7 @@ public class AttackSkills implements Listener {
 			    m.getWorld().createExplosion(m.getLocation(), 0);
 			    // ////
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Ten"));
-			    config.set(tirer, false);
+			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
@@ -261,8 +261,8 @@ public class AttackSkills implements Listener {
 	File f = new File("plugins/NirvaEx/worlds.yml");
 	FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 	String path = p.getWorld().toString() + ".NirvaEx actived";;
-	boolean mondeset = modif.getBoolean(path);
-	if (mondeset == false) {
+	boolean isActivated = modif.getBoolean(path);
+	if (isActivated == false) {
 	    return false;
 	} else {
 	    return true;

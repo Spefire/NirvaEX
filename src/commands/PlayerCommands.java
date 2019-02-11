@@ -33,8 +33,8 @@ public class PlayerCommands implements Listener {
     @EventHandler(priority = EventPriority.MONITOR) public void PlayerConnected(PlayerLoginEvent e) {
 	Player p = e.getPlayer();
 	FileConfiguration config = plugin.getConfig();
-	String tirer = "loading." + p.getName();
-	config.set(tirer, true);
+	String load = "loading." + p.getName();
+	config.set(load, true);
 	String langages = "languages." + p.getName();
 	String langage = config.getString(langages);
 	String ldefaut = "languages." + "Default";
@@ -69,10 +69,10 @@ public class PlayerCommands implements Listener {
 	    String langages = "languages." + p.getName();
 	    String langage = config.getString(langages);
 	    String path = "class." + p.getName();
-	    String classe = config.getString(path);
+	    String category = config.getString(path);
 	    if (params.length == 2) {
 		p.sendMessage(ChatColor.RED + modif.getString(langage + ".warning"));
-		if (classe == null || plugin.hasPermission(p, "nirva.change.class") || plugin.hasPermission(p, "nirva.admin")) {
+		if (category == null || plugin.hasPermission(p, "nirva.change.class") || plugin.hasPermission(p, "nirva.admin")) {
 		    if (params[1].toLowerCase().equalsIgnoreCase(modif.getString("Class.One"))) {
 			if (plugin.hasPermission(p, "nirva.class.one") || plugin.hasPermission(p, "nirva.class.all") || plugin.hasPermission(p, "nirva.admin")) {
 			    config.set(path, modif.getString("Class.One"));
@@ -196,32 +196,32 @@ public class PlayerCommands implements Listener {
 	    String langage = config.getString(langages);
 	    if (plugin.hasPermission(p, "nirva.have.stuff") || plugin.hasPermission(p, "nirva.admin")) {
 		String arg = "class." + p.getName();
-		String classe = config.getString(arg);
+		String category = config.getString(arg);
 		Player player = p;
 		ItemStack weapon;
-		if (classe == null) {
+		if (category == null) {
 		    p.sendMessage(ChatColor.RED + modif.getString(langage + ".nohaveclass"));
-		} else if (classe.equalsIgnoreCase(modif.getString("Class.Five"))) {
+		} else if (category.equalsIgnoreCase(modif.getString("Class.Five"))) {
 		    weapon = new ItemStack(Material.STONE_HOE);
 		    player.getInventory().addItem(weapon);
 		    weapon = new ItemStack(Material.SLIME_BALL);
 		    player.getInventory().addItem(weapon);
-		} else if (classe.equalsIgnoreCase(modif.getString("Class.One"))) {
+		} else if (category.equalsIgnoreCase(modif.getString("Class.One"))) {
 		    weapon = new ItemStack(Material.STONE_SWORD);
 		    player.getInventory().addItem(weapon);
 		    weapon = new ItemStack(Material.SLIME_BALL);
 		    player.getInventory().addItem(weapon);
-		} else if (classe.equalsIgnoreCase(modif.getString("Class.Seven"))) {
+		} else if (category.equalsIgnoreCase(modif.getString("Class.Seven"))) {
 		    weapon = new ItemStack(Material.YELLOW_FLOWER);
 		    player.getInventory().addItem(weapon);
 		    weapon = new ItemStack(Material.SLIME_BALL);
 		    player.getInventory().addItem(weapon);
-		} else if (classe.equalsIgnoreCase(modif.getString("Class.Three"))) {
+		} else if (category.equalsIgnoreCase(modif.getString("Class.Three"))) {
 		    weapon = new ItemStack(Material.RED_ROSE);
 		    player.getInventory().addItem(weapon);
 		    weapon = new ItemStack(Material.SLIME_BALL);
 		    player.getInventory().addItem(weapon);
-		} else if (classe.equalsIgnoreCase(modif.getString("Class.Two"))) {
+		} else if (category.equalsIgnoreCase(modif.getString("Class.Two"))) {
 		    weapon = new ItemStack(Material.BOW);
 		    player.getInventory().addItem(weapon);
 		    weapon = new ItemStack(Material.ARROW);
@@ -229,22 +229,22 @@ public class PlayerCommands implements Listener {
 		    player.getInventory().addItem(weapon);
 		    weapon = new ItemStack(Material.SLIME_BALL);
 		    player.getInventory().addItem(weapon);
-		} else if (classe.equalsIgnoreCase(modif.getString("Class.Four"))) {
+		} else if (category.equalsIgnoreCase(modif.getString("Class.Four"))) {
 		    weapon = new ItemStack(Material.PAPER);
 		    player.getInventory().addItem(weapon);
 		    weapon = new ItemStack(Material.SLIME_BALL);
 		    player.getInventory().addItem(weapon);
-		} else if (classe.equalsIgnoreCase(modif.getString("Class.Six"))) {
+		} else if (category.equalsIgnoreCase(modif.getString("Class.Six"))) {
 		    weapon = new ItemStack(Material.FLINT);
 		    player.getInventory().addItem(weapon);
 		    weapon = new ItemStack(Material.SLIME_BALL);
 		    player.getInventory().addItem(weapon);
-		} else if (classe.equalsIgnoreCase(modif.getString("Class.Eight"))) {
+		} else if (category.equalsIgnoreCase(modif.getString("Class.Eight"))) {
 		    weapon = new ItemStack(Material.STONE_AXE);
 		    player.getInventory().addItem(weapon);
 		    weapon = new ItemStack(Material.SLIME_BALL);
 		    player.getInventory().addItem(weapon);
-		} else if (classe.equalsIgnoreCase(modif.getString("Class.Nine"))) {
+		} else if (category.equalsIgnoreCase(modif.getString("Class.Nine"))) {
 		    weapon = new ItemStack(Material.STONE_SWORD);
 		    player.getInventory().addItem(weapon);
 		    weapon = new ItemStack(Material.SLIME_BALL);
@@ -259,16 +259,16 @@ public class PlayerCommands implements Listener {
 	    e.setCancelled(true);
 	    FileConfiguration config = plugin.getConfig();
 	    String path = "class." + p.getName();
-	    String classe = config.getString(path);
+	    String category = config.getString(path);
 	    String langages = "languages." + p.getName();
 	    String langage = config.getString(langages);
-	    if (classe != null && !classe.equalsIgnoreCase(" ")) {
+	    if (category != null && !category.equalsIgnoreCase(" ")) {
 		if ("French".equalsIgnoreCase(langage)) {
-		    p.sendMessage(ChatColor.AQUA + "Votre classe est " + ChatColor.WHITE + classe);
+		    p.sendMessage(ChatColor.AQUA + "Votre classe est " + ChatColor.WHITE + category);
 		    int xp = (int) (p.getExp() * 100);
 		    p.sendMessage(ChatColor.AQUA + "Vous êtes Level " + p.getLevel() + " avec " + xp + "%");
 		} else {
-		    p.sendMessage(ChatColor.AQUA + "Your class is " + ChatColor.WHITE + classe);
+		    p.sendMessage(ChatColor.AQUA + "Your class is " + ChatColor.WHITE + category);
 		    int xp = (int) (p.getExp() * 100);
 		    p.sendMessage(ChatColor.AQUA + "You are Level " + p.getLevel() + " with " + xp + "%");
 		}
@@ -369,8 +369,8 @@ public class PlayerCommands implements Listener {
 	    File f = new File("plugins/NirvaEx/worlds.yml");
 	    FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 	    String path = p.getWorld().toString() + ".NirvaEx actived";
-	    boolean mondeset = modif.getBoolean(path);
-	    if (mondeset == false) {
+	    boolean isActivated = modif.getBoolean(path);
+	    if (isActivated == false) {
 		return false;
 	    } else {
 		return true;
@@ -379,8 +379,8 @@ public class PlayerCommands implements Listener {
 	    File f = new File("plugins/NirvaEx/worlds.yml");
 	    FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 	    String path = p.getWorld().toString() + ".NirvaEx actived";
-	    boolean mondeset = modif.getBoolean(path);
-	    if (mondeset == false || !plugin.getWorldGuard().getGlobalRegionManager().allows(DefaultFlag.PVP, p.getLocation())) {
+	    boolean isActivated = modif.getBoolean(path);
+	    if (isActivated == false || !plugin.getWorldGuard().getGlobalRegionManager().allows(DefaultFlag.PVP, p.getLocation())) {
 		return false;
 	    } else {
 		return true;

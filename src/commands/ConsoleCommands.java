@@ -27,12 +27,12 @@ public class ConsoleCommands implements Listener {
 	Player p = e.getPlayer();
 	FileConfiguration config = plugin.getConfig();
 	String path = "class." + p.getName();
-	String classe = config.getString(path);
+	String category = config.getString(path);
 	String chat = "chat";
 	boolean tchat = config.getBoolean(chat);
-	if (classe != null && !classe.equalsIgnoreCase(" ") && tchat == true) {
+	if (category != null && !category.equalsIgnoreCase(" ") && tchat == true) {
 	    String mess = e.getMessage();
-	    e.setMessage(ChatColor.AQUA + "(" + classe + ") " + ChatColor.WHITE + mess);
+	    e.setMessage(ChatColor.AQUA + "(" + category + ") " + ChatColor.WHITE + mess);
 	}
     }
 

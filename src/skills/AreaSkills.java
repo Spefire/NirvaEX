@@ -39,22 +39,22 @@ public class AreaSkills implements Listener {
 	    FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 	    FileConfiguration config = plugin.getConfig();
 	    String path = "class." + p.getName();
-	    String classe = config.getString(path);
+	    String category = config.getString(path);
 	    String langages = "languages." + p.getName();
 	    String langage = config.getString(langages);
-	    String tirer = "loading." + p.getName();
-	    boolean canFire = config.getBoolean(tirer);
+	    String load = "loading." + p.getName();
+	    boolean canFire = config.getBoolean(load);
 	    String arg = "ability." + p.getName();
 	    int skill = config.getInt(arg);
 	    if ((event.getAction() == Action.LEFT_CLICK_AIR) || (event.getAction() == Action.LEFT_CLICK_BLOCK)) {
-		if (modifi.getString("Class.Five").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Five"))) {
+		if (modifi.getString("Class.Five").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Five"))) {
 		    if (skill == 2 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
-			Location ici = p.getLocation();
+			Location here = p.getLocation();
 			boolean used = false;
 			for (Player entity : entites) {
-			    double distance = entity.getLocation().distance(ici);
+			    double distance = entity.getLocation().distance(here);
 			    if (distance < range) {
 				used = true;
 				entity.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 20 * seconds, 0));
@@ -65,20 +65,20 @@ public class AreaSkills implements Listener {
 			// ///
 			if (used) {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.One"));
-			    config.set(tirer, false);
+			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 		    }
-		} else if (modifi.getString("Class.Seven").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Seven"))) {
+		} else if (modifi.getString("Class.Seven").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Seven"))) {
 		    if (skill == 3 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
-			Location ici = p.getLocation();
+			Location here = p.getLocation();
 			boolean used = false;
 			for (Player entity : entites) {
-			    double distance = entity.getLocation().distance(ici);
+			    double distance = entity.getLocation().distance(here);
 			    if (distance < range && entity != p) {
 				used = true;
 				entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 5 * seconds, 5));
@@ -89,20 +89,20 @@ public class AreaSkills implements Listener {
 			// ///
 			if (used) {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Two"));
-			    config.set(tirer, false);
+			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 		    }
-		} else if (modifi.getString("Class.Four").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Four"))) {
+		} else if (modifi.getString("Class.Four").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Four"))) {
 		    if (skill == 3 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
-			Location ici = p.getLocation();
+			Location here = p.getLocation();
 			boolean used = false;
 			for (Player entity : entites) {
-			    double distance = entity.getLocation().distance(ici);
+			    double distance = entity.getLocation().distance(here);
 			    if (distance < range && entity != p) {
 				used = true;
 				p.getWorld().strikeLightningEffect(entity.getLocation());
@@ -113,7 +113,7 @@ public class AreaSkills implements Listener {
 			// ///
 			if (used) {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Three"));
-			    config.set(tirer, false);
+			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
@@ -122,10 +122,10 @@ public class AreaSkills implements Listener {
 		    if (skill == 2 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
-			Location ici = p.getLocation();
+			Location here = p.getLocation();
 			boolean used = false;
 			for (Player entity : entites) {
-			    double distance = entity.getLocation().distance(ici);
+			    double distance = entity.getLocation().distance(here);
 			    if (distance < range && entity != p) {
 				used = true;
 				entity.setFireTicks(10 * seconds);
@@ -135,20 +135,20 @@ public class AreaSkills implements Listener {
 			// ///
 			if (used) {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Four"));
-			    config.set(tirer, false);
+			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 		    }
-		} else if (modifi.getString("Class.Six").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Six"))) {
+		} else if (modifi.getString("Class.Six").equalsIgnoreCase(category) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Six"))) {
 		    if (skill == 1 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
-			Location ici = p.getLocation();
+			Location here = p.getLocation();
 			boolean used = false;
 			for (Player entity : entites) {
-			    double distance = entity.getLocation().distance(ici);
+			    double distance = entity.getLocation().distance(here);
 			    if (distance < range && entity != p) {
 				used = true;
 				entity.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 15 * seconds, 1));
@@ -158,7 +158,7 @@ public class AreaSkills implements Listener {
 			// ///
 			if (used) {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Six"));
-			    config.set(tirer, false);
+			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
@@ -167,10 +167,10 @@ public class AreaSkills implements Listener {
 		    if (skill == 2 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
-			Location ici = p.getLocation();
+			Location here = p.getLocation();
 			boolean used = false;
 			for (Player entity : entites) {
-			    double distance = entity.getLocation().distance(ici);
+			    double distance = entity.getLocation().distance(here);
 			    Vector attirance = entity.getLocation().subtract(p.getLocation()).toVector();
 			    attirance.setX(-attirance.getX() / 2);
 			    attirance.setY(-attirance.getY() / 2);
@@ -186,7 +186,7 @@ public class AreaSkills implements Listener {
 			// ///
 			if (used) {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Nine"));
-			    config.set(tirer, false);
+			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
@@ -195,10 +195,10 @@ public class AreaSkills implements Listener {
 		    if (skill == 4 && canFire == true) {
 			// ///
 			List<Player> entites = p.getWorld().getPlayers();
-			Location ici = p.getLocation();
+			Location here = p.getLocation();
 			boolean used = false;
 			for (Player entity : entites) {
-			    double distance = entity.getLocation().distance(ici);
+			    double distance = entity.getLocation().distance(here);
 			    if (distance < range && entity != p) {
 				used = true;
 				entity.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 10 * seconds, 0));
@@ -209,7 +209,7 @@ public class AreaSkills implements Listener {
 			// ///
 			if (used) {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Seven"));
-			    config.set(tirer, false);
+			    config.set(load, false);
 			    plugin.saveConfig();
 			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
@@ -224,8 +224,8 @@ public class AreaSkills implements Listener {
 	File f = new File("plugins/NirvaEx/worlds.yml");
 	FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 	String path = p.getWorld().toString() + ".NirvaEx actived";;
-	boolean mondeset = modif.getBoolean(path);
-	if (mondeset == false) {
+	boolean isActivated = modif.getBoolean(path);
+	if (isActivated == false) {
 	    return false;
 	} else {
 	    return true;

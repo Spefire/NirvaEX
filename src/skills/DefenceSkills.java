@@ -40,8 +40,8 @@ public class DefenceSkills implements Listener {
 	    String classe = config.getString(path);
 	    String langages = "languages." + p.getName();
 	    String langage = config.getString(langages);
-	    String tirer = "loading." + p.getName();
-	    boolean canFire = config.getBoolean(tirer);
+	    String load = "loading." + p.getName();
+	    boolean canFire = config.getBoolean(load);
 	    String arg = "ability." + p.getName();
 	    int skill = config.getInt(arg);
 	    if ((event.getAction() == Action.LEFT_CLICK_AIR) || (event.getAction() == Action.LEFT_CLICK_BLOCK)) {
@@ -55,7 +55,7 @@ public class DefenceSkills implements Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 5 * seconds, 4));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Two"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -67,7 +67,7 @@ public class DefenceSkills implements Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 15 * seconds, 1));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Three"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -78,7 +78,7 @@ public class DefenceSkills implements Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 15 * seconds, 0));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Four"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -90,7 +90,7 @@ public class DefenceSkills implements Listener {
 			p.setVelocity(v);
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Six"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -107,7 +107,7 @@ public class DefenceSkills implements Listener {
 			System.out.println("I'M BATMAN !");
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Seven"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -119,7 +119,7 @@ public class DefenceSkills implements Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 10 * seconds, 0));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Eight"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -130,7 +130,7 @@ public class DefenceSkills implements Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 15 * seconds, 0));
 			// //
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Nine"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -143,7 +143,7 @@ public class DefenceSkills implements Listener {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 20 * seconds, 0));
 			// ///
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Ten"));
-			config.set(tirer, false);
+			config.set(load, false);
 			plugin.saveConfig();
 			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
@@ -157,8 +157,8 @@ public class DefenceSkills implements Listener {
 	File f = new File("plugins/NirvaEx/worlds.yml");
 	FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 	String path = p.getWorld().toString() + ".NirvaEx actived";;
-	boolean mondeset = modif.getBoolean(path);
-	if (mondeset == false) {
+	boolean isActivated = modif.getBoolean(path);
+	if (isActivated == false) {
 	    return false;
 	} else {
 	    return true;

@@ -254,8 +254,8 @@ public class SkillsNames implements Listener {
 	File f = new File("plugins/NirvaEx/worlds.yml");
 	FileConfiguration modif = YamlConfiguration.loadConfiguration(f);
 	String path = p.getWorld().toString() + ".NirvaEx actived";;
-	boolean mondeset = modif.getBoolean(path);
-	if (mondeset == false) {
+	boolean isActivated = modif.getBoolean(path);
+	if (isActivated == false) {
 	    return false;
 	} else {
 	    return true;

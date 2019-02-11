@@ -29,7 +29,7 @@ class Cooldown extends Thread {
 	    FileConfiguration modifi = YamlConfiguration.loadConfiguration(fi);
 	    String langages = "languages." + p.getName();
 	    String langage = config.getString(langages);
-	    String tirer = "loading." + p.getName();
+	    String load = "loading." + p.getName();
 	    long waitingTime = modifi.getLong("Types.Cooldown");
 	    if ((waitingTime - p.getLevel()) <= 5) {
 		waitingTime = 5000;
@@ -44,7 +44,7 @@ class Cooldown extends Thread {
 		sleep(1000);
 		waitingTime = waitingTime - 1000;
 	    }
-	    config.set(tirer, true);
+	    config.set(load, true);
 	    plugin.saveConfig();
 	    p.getWorld().playEffect(p.getLocation(), Effect.EXTINGUISH, 1000);
 	    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".recharge"));
