@@ -1,4 +1,4 @@
-package main;
+package commands;
 
 import java.io.File;
 
@@ -13,11 +13,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.server.ServerCommandEvent;
 
-public class ConsoleCommand implements Listener {
+import main.Nirva;
+
+public class ConsoleCommands implements Listener {
 
     private Nirva plugin;
 
-    public ConsoleCommand(Nirva plugin) {
+    public ConsoleCommands(Nirva plugin) {
 	this.plugin = plugin;
     }
 

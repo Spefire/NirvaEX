@@ -1,4 +1,4 @@
-package main;
+package commands;
 
 import java.io.File;
 
@@ -19,13 +19,14 @@ import org.bukkit.inventory.ItemStack;
 
 import com.sk89q.worldguard.protection.flags.DefaultFlag;
 
+import main.Nirva;
 import ru.tehkode.permissions.bukkit.PermissionsEx;
 
-public class PlayerCommand implements Listener {
+public class PlayerCommands implements Listener {
 
     private Nirva plugin;
 
-    public PlayerCommand(Nirva plugin) {
+    public PlayerCommands(Nirva plugin) {
 	this.plugin = plugin;
     }
 

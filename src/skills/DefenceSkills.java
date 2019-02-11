@@ -1,4 +1,4 @@
-package sorts;
+package skills;
 
 import java.io.File;
 
@@ -19,12 +19,12 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
-public class SortDefence implements Listener {
+public class DefenceSkills implements Listener {
 
     private Nirva plugin;
     private int secondes = 20;
 
-    public SortDefence(Nirva plugin) {
+    public DefenceSkills(Nirva plugin) {
 	this.plugin = plugin;
     }
 
@@ -57,7 +57,7 @@ public class SortDefence implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Two"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.One").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.One"))) {
@@ -69,7 +69,7 @@ public class SortDefence implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Three"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		    if (sort == 3 && peutTirer == true) {
@@ -80,7 +80,7 @@ public class SortDefence implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Four"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Four").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Four"))) {
@@ -92,7 +92,7 @@ public class SortDefence implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Six"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Five").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Five"))) {
@@ -109,7 +109,7 @@ public class SortDefence implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Seven"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Eight").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Eight"))) {
@@ -121,7 +121,7 @@ public class SortDefence implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Eight"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		    if (sort == 3 && peutTirer == true) {
@@ -132,7 +132,7 @@ public class SortDefence implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Nine"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Nine").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Nine"))) {
@@ -145,7 +145,7 @@ public class SortDefence implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Def.Ten"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		}

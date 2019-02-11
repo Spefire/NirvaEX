@@ -1,4 +1,4 @@
-package sorts;
+package skills;
 
 import java.io.File;
 
@@ -18,12 +18,12 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class SortAttaque implements Listener {
+public class AttackSkills implements Listener {
 
     private Nirva plugin;
     private int secondes = 20;
 
-    public SortAttaque(Nirva plugin) {
+    public AttackSkills(Nirva plugin) {
 	this.plugin = plugin;
     }
 
@@ -57,7 +57,7 @@ public class SortAttaque implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.One"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		    if (sort == 1 && peutTirer == true) {
@@ -70,7 +70,7 @@ public class SortAttaque implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Two"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Three").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Three"))) {
@@ -82,7 +82,7 @@ public class SortAttaque implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Three"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Five").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Five"))) {
@@ -95,7 +95,7 @@ public class SortAttaque implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Four"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		    if (sort == 4 && peutTirer == true) {
@@ -107,7 +107,7 @@ public class SortAttaque implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Five"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Seven").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Seven"))) {
@@ -120,7 +120,7 @@ public class SortAttaque implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Six"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Eight").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Eight"))) {
@@ -132,7 +132,7 @@ public class SortAttaque implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Eleven"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		    if (sort == 4 && peutTirer == true) {
@@ -143,7 +143,7 @@ public class SortAttaque implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Twelve"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Nine").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Nine"))) {
@@ -156,7 +156,7 @@ public class SortAttaque implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Thirteen"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		    if (sort == 3 && peutTirer == true) {
@@ -172,7 +172,7 @@ public class SortAttaque implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Fourteen"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		}
@@ -211,7 +211,7 @@ public class SortAttaque implements Listener {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Seven"));
 			    config.set(tirer, false);
 			    plugin.saveConfig();
-			    Recharge rt = new Recharge(p, plugin);
+			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 			if (sort == 2 && peutTirer == true) {
@@ -223,7 +223,7 @@ public class SortAttaque implements Listener {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Eight"));
 			    config.set(tirer, false);
 			    plugin.saveConfig();
-			    Recharge rt = new Recharge(p, plugin);
+			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 			if (sort == 3 && peutTirer == true) {
@@ -235,7 +235,7 @@ public class SortAttaque implements Listener {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Nine"));
 			    config.set(tirer, false);
 			    plugin.saveConfig();
-			    Recharge rt = new Recharge(p, plugin);
+			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 			if (sort == 4 && peutTirer == true) {
@@ -248,7 +248,7 @@ public class SortAttaque implements Listener {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Atk.Ten"));
 			    config.set(tirer, false);
 			    plugin.saveConfig();
-			    Recharge rt = new Recharge(p, plugin);
+			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 		    }

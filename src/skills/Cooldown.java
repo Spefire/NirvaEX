@@ -1,4 +1,4 @@
-package sorts;
+package skills;
 
 import java.io.File;
 
@@ -10,12 +10,12 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-class Recharge extends Thread {
+class Cooldown extends Thread {
 
     private Nirva plugin;
     private Player p;
 
-    public Recharge(Player p, Nirva plugin) {
+    public Cooldown(Player p, Nirva plugin) {
     	this.plugin = plugin;
     	this.p = p;
     }

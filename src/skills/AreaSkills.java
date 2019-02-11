@@ -1,4 +1,4 @@
-package sorts;
+package skills;
 
 import java.io.File;
 import java.util.List;
@@ -20,13 +20,13 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
-public class SortZone implements Listener {
+public class AreaSkills implements Listener {
 
     private Nirva plugin;
     private int range = 7;
     private int secondes = 20;
 
-    public SortZone(Nirva plugin) {
+    public AreaSkills(Nirva plugin) {
 	this.plugin = plugin;
     }
 
@@ -67,7 +67,7 @@ public class SortZone implements Listener {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.One"));
 			    config.set(tirer, false);
 			    plugin.saveConfig();
-			    Recharge rt = new Recharge(p, plugin);
+			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 		    }
@@ -91,7 +91,7 @@ public class SortZone implements Listener {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Two"));
 			    config.set(tirer, false);
 			    plugin.saveConfig();
-			    Recharge rt = new Recharge(p, plugin);
+			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 		    }
@@ -115,7 +115,7 @@ public class SortZone implements Listener {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Three"));
 			    config.set(tirer, false);
 			    plugin.saveConfig();
-			    Recharge rt = new Recharge(p, plugin);
+			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 		    }
@@ -137,7 +137,7 @@ public class SortZone implements Listener {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Four"));
 			    config.set(tirer, false);
 			    plugin.saveConfig();
-			    Recharge rt = new Recharge(p, plugin);
+			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 		    }
@@ -160,7 +160,7 @@ public class SortZone implements Listener {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Six"));
 			    config.set(tirer, false);
 			    plugin.saveConfig();
-			    Recharge rt = new Recharge(p, plugin);
+			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 		    }
@@ -188,7 +188,7 @@ public class SortZone implements Listener {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Nine"));
 			    config.set(tirer, false);
 			    plugin.saveConfig();
-			    Recharge rt = new Recharge(p, plugin);
+			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 		    }
@@ -211,7 +211,7 @@ public class SortZone implements Listener {
 			    p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Zon.Seven"));
 			    config.set(tirer, false);
 			    plugin.saveConfig();
-			    Recharge rt = new Recharge(p, plugin);
+			    Cooldown rt = new Cooldown(p, plugin);
 			    rt.start();
 			}
 		    }

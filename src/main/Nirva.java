@@ -13,23 +13,25 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 
+import commands.ConsoleCommands;
+import commands.PlayerCommands;
 import ru.tehkode.permissions.PermissionManager;
-import sorts.SortAttaque;
-import sorts.SortDefence;
-import sorts.SortVisee;
-import sorts.SortZone;
-import sorts.Sortileges;
+import skills.AttackSkills;
+import skills.DefenceSkills;
+import skills.TargetedSkills;
+import skills.AreaSkills;
+import skills.SkillsNames;
 
 public class Nirva extends JavaPlugin {
 
     private Nirva plugin;
-    private SortAttaque sortatt;
-    private SortDefence sortdef;
-    private SortZone sortzon;
-    private SortVisee sortvis;
-    private Sortileges sortilege;
-    private ConsoleCommand concommand;
-    private PlayerCommand placommand;
+    private AttackSkills sortatt;
+    private DefenceSkills sortdef;
+    private AreaSkills sortzon;
+    private TargetedSkills sortvis;
+    private SkillsNames sortilege;
+    private ConsoleCommands concommand;
+    private PlayerCommands placommand;
     public PermissionManager pManager;
     public WorldGuardPlugin wgPlugin;
     Logger log;
@@ -43,19 +45,19 @@ public class Nirva extends JavaPlugin {
 	PluginManager pm = getServer().getPluginManager();
 	
 	wgPlugin = getWorldGuard();
-	concommand = new ConsoleCommand(this);
+	concommand = new ConsoleCommands(this);
 	pm.registerEvents(concommand, this);
-	placommand = new PlayerCommand(this);
+	placommand = new PlayerCommands(this);
 	pm.registerEvents(placommand, this);
-	sortatt = new SortAttaque(this);
+	sortatt = new AttackSkills(this);
 	pm.registerEvents(sortatt, this);
-	sortdef = new SortDefence(this);
+	sortdef = new DefenceSkills(this);
 	pm.registerEvents(sortdef, this);
-	sortzon = new SortZone(this);
+	sortzon = new AreaSkills(this);
 	pm.registerEvents(sortzon, this);
-	sortvis = new SortVisee(this);
+	sortvis = new TargetedSkills(this);
 	pm.registerEvents(sortvis, this);
-	sortilege = new Sortileges(this);
+	sortilege = new SkillsNames(this);
 	pm.registerEvents(sortilege, this);
 	plugin.saveConfig();
 	try {

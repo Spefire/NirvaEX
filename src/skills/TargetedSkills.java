@@ -1,4 +1,4 @@
-package sorts;
+package skills;
 
 import java.io.File;
 
@@ -20,13 +20,13 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.BlockIterator;
 
-public class SortVisee implements Listener {
+public class TargetedSkills implements Listener {
 
     private Nirva plugin;
     private int range = 20;
     private int secondes = 20;
 
-    public SortVisee(Nirva plugin) {
+    public TargetedSkills(Nirva plugin) {
 	this.plugin = plugin;
     }
 
@@ -63,7 +63,7 @@ public class SortVisee implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.One"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		    if (sort == 3 && peutTirer == true) {
@@ -92,7 +92,7 @@ public class SortVisee implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Two"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		    if (sort == 4 && peutTirer == true && entity != null) {
@@ -113,7 +113,7 @@ public class SortVisee implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Three"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Four").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Four"))) {
@@ -125,7 +125,7 @@ public class SortVisee implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Four"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Six").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Six"))) {
@@ -137,7 +137,7 @@ public class SortVisee implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Five"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Seven").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().equalsIgnoreCase(modifi.getString("Weapons.Seven"))) {
@@ -157,7 +157,7 @@ public class SortVisee implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Six"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		} else if (modifi.getString("Class.Nine").equalsIgnoreCase(classe) && p.getItemInHand().getType().toString().contains(modifi.getString("Weapons.Nine"))) {
@@ -171,7 +171,7 @@ public class SortVisee implements Listener {
 			p.sendMessage(ChatColor.AQUA + modif.getString(langage + ".use") + ChatColor.WHITE + modif.getString(langage + ".Vis.Seven"));
 			config.set(tirer, false);
 			plugin.saveConfig();
-			Recharge rt = new Recharge(p, plugin);
+			Cooldown rt = new Cooldown(p, plugin);
 			rt.start();
 		    }
 		}
